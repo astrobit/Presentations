@@ -1,0 +1,49 @@
+We will go through a much abbreviated game, following only the visiting team. The initial batting order is: #11, #7, #25, #16, #3, #5, #8, #19, #46 (P).
+
+1st Inning:
+
+#11 draws a walk. During #7's at bat, #11 manages to steal 2nd base. #7 singles allowing #11 to score.
+#25 comes up to bat; #7 attempts to steal but the catcher is too fast and gets the ball to the 2nd baseman for the out. #25 then strikes out on a called strike.
+#16 reaches on a walk, but #3 swings and strikes out, ending the inning.
+
+** review 1st inning scorecard
+
+Bot 1st:
+The pitcher #46 is taken out after a poor start. He is replaced by #50.
+
+2nd Inning:
+#5 hits a ground ball to the shortstop, who makes the throw to 1st for the 1st out.
+#8 strikes out on a called strile. #19 also grounds to the shortstop who throws to 1st to end the inning.
+
+3rd inning:
+#50 strikes out watching, as does #11 at the top of the order. #7 flies out to left field, ending the inning.
+
+4th inning:
+#25 strikes out swinging. #16 has an infield popup, nabbed by the third baseman. #3 reaches on a single; during the play, the 2nd baseman makes an errant throw to 1st, allowing the runner to advance to 2nd. #5 pops up to left field for the 3rd out.
+
+5th inning:
+#8 leads off the inning with a double. #19 strikes out swining. The coach puts in pinch hitter #49 in place of #50, who has a pop foul that is caught by the catcher. At the top of the order #11 lines out to the 2nd baseman.
+
+
+6th inning:
+#6 hits a line drive caught by the 3rd baseman. #25 hits a long ball to right field that goes foul but is caught by the right fielder. #16 reaches base on a double, but #3 hits a grounder to 3rd base, who makes the throw to 1st, ending the inning.
+
+Bot 6th:
+#28 is put in as a pitcher, replacing #49.
+
+7th inning:
+#5 strikes out swinging. #8 hits a double. #19 also strikes out swinging. #51 is substituted as a pinch hitter for #28. #51 grounds to the shortstop, who makes the throw to the first baseman.
+
+Bot 7:
+#37 is put in as pitcher, replacing #51 (and #28).
+
+8th inning:
+The opposing team puts in their first new pitcher. #11 leads off with a grounder to the pitcher, who throws to first base for the out. #7 makes it to base on a walk. #25 hits a dinger, scoring both himself and #7. The opposing team again changes pitcher.  #16 hits a long fly ball to right field that is caught for the 2nd out. #3 singles. The opposing team changes pitcher for the 3rd time in the inning.  #3 steals 2nd base on #5 at bat, but #5 then strikes out swinging.
+
+Bot 8:
+#53 relieves #37.
+
+9th inning:
+#8 leads off with a walk. #19 reaches on a single, #8 advances to 2nd base. #53 stikes out on called strikes. #11 hits a grounder to the 3rd baseman, who throws to the 2nd baseman to put out #19. #8 advances to 3rd on the play. #7 strikes out swinging to end the game.
+
+
