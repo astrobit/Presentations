@@ -98,8 +98,9 @@ J. Craig Wheeler & Jeffrey Silverman\\
 \cline{1-1} \textbf{Committee} & Kaicheng Zhang\\
 Volker Bromm & Department faculty \& staff\\
 Milos Milosavljevic & Mark McCormick\\
-E. ``Rob'' Robinson & Jen Rios \\
-Joszef Vinko & Friends \& Family\\
+E. ``Rob'' Robinson & Doene Demirgoez\\
+Joszef Vinko & Jen Rios \\
+& Friends \& Family\\
 \end{tabular}
 \end{center}
 }
@@ -112,7 +113,7 @@ Joszef Vinko & Friends \& Family\\
 %\item Synthetic spectra \& comparison to observations
 %\end{itemize}
 %}
-\setbeamertemplate{footline}{\insertsectionhead~\insertpagenumber / 12}
+\setbeamertemplate{footline}{\insertsectionhead~\insertpagenumber / 10}
 
 
 \section{Background: What are Type Ia supernovae (SN~Ia)?}
@@ -269,8 +270,8 @@ Joszef Vinko & Friends \& Family\\
 \frame{
 \frametitle{How to explode}
 \begin{tabular}{l}
-Add mass to make gravity overcome pressure (how?)\\
-At 1.4$\;\mathrm{M}_{\odot}$ gravity starts win\\
+Add mass such that gravity overcomes pressure (how?)\\
+At 1.4$\;\mathrm{M}_{\odot}$ gravity starts to win\\
 \hspace{2em}Star begins fusing carbon / oxygen $\rightarrow$ (Ne, Mg, Ar, Si, S, Ca)\\
 Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy --- explosion!\\
 \end{tabular}
@@ -278,8 +279,8 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 \draw[opacity=0,yellow] (0.1,0.1) rectangle (14.6,7);
 \fill[white] (2,3.0) circle(2);
 \foreach \x in {1,...,30}{
-		\coordinate (A) at ($ (2,5.5) + (-90+rand*15.0:rand*1.5)$);
-		\fill[white]  (A) circle(0.01);
+		\coordinate (A) at ($ (2,5.0) + (-90+rand*15.0:rand*1.5)$);
+		\fill[white]  (A) circle(0.03);
 }
 \foreach \x in {1,...,12}{
 		\coordinate (A) at ($ (2,3)+ (\x*360.0/12.0:1.5)$);
@@ -323,6 +324,9 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 
 \frame{\frametitle{How to tell the two scenarios apart?}
 \begin{tabular}{l}
+\color{yellow}Have never seen a system prior to explosion\\
+\hspace{2em} Need to look for evidence after the fact.\\
+\\
 \color{white}Single degenerate\\
 \hspace{2em} Look for surviving companion\\
 \\
@@ -338,6 +342,9 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 
 \frame{\frametitle{How to tell the two scenarios apart?}
 \begin{tabular}{l}
+\color{yellow}Have never seen a system prior to explosion\\
+\hspace{2em} Need to look for evidence after the fact.\\
+\\
 \color{white}Single degenerate\\
 \hspace{2em} Look for surviving companion\\
 \color{magenta}\hspace{4em} Maybe for Tycho's SN --- c.f. Ruiz-Lapuente et al. (2004)\\
@@ -353,6 +360,9 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 
 \frame{\frametitle{How to tell the two scenarios apart?}
 \begin{tabular}{l}
+\color{yellow}Have never seen a system prior to explosion\\
+\hspace{2em} Need to look for evidence after the fact.\\
+\\
 \color{white}Single degenerate\\
 \hspace{2em} Look for surviving companion\\
 \color{magenta}\hspace{4em} Maybe for Tycho's SN --- c.f. Ruiz-Lapuente et al. (2004)\\
@@ -369,6 +379,9 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 
 \frame{\frametitle{How to tell the two scenarios apart?}
 \begin{tabular}{l}
+\color{yellow}Have never seen a system prior to explosion\\
+\hspace{2em} Need to look for evidence after the fact.\\
+\\
 \color{white}Single degenerate\\
 \hspace{2em} Look for surviving companion\\
 \color{magenta}\hspace{4em} Maybe for Tycho's SN --- c.f. Ruiz-Lapuente et al. (2004)\\
@@ -387,7 +400,7 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 \section{Early spectra \& high-velocity features}
 \setcounter{page}{1}
 \frame{
-\frametitle{SN~2011fe}
+\frametitle{Early spectra: SN~2011fe}
 \begin{tabular}{l}
 \\
 First observed within $\sim$1~d after the explosion occurred (Nugent 2011)\\
@@ -438,7 +451,7 @@ Multiple spectra and photometry (including HST) nearly every day prior to peak b
 \draw[gray,dashed] (14.1,1.15) -- +(0,7.60);
 \draw[gray] (12.98,1.15) -- +(0,7.60);
 \draw[gray,dashed] (12.85,1.15) -- +(0,7.60);
-\fill[black,opacity=0.4] (9.9,1.15) rectangle +(5.38,3.1);
+%\fill[black,opacity=0.4] (9.9,1.15) rectangle +(5.38,3.1);
 
 \draw[white] (4.506,7.75) node {SN 2011fe (Pereira et al. 2013, Mazzali et al. 2014)};
 \draw[white,->] (7.9,8.4) -- (8.9,8.40);
@@ -491,13 +504,16 @@ Multiple spectra and photometry (including HST) nearly every day prior to peak b
 \draw[green!70!black] (12.4,7.05) node[font=\scriptsize] {Si II};
 \draw[blue] (11.75,5.7) node[font=\scriptsize] {HVF};
 \draw[magenta] (13.4,6.1) node[font=\scriptsize] {PVF};
-\draw[yellow] (7,2.75) node[left] {Photospheric-Velocity Feature (PVF)};
-\draw[yellow] (15,2.75) node[left] {High-Velocity Feature (HVF)};
-\draw[white] (7.95,2) node {CaNIR does not suffer from blending, consistently has HVF};
-\draw[white] (7.95,1.25) node {HVF also exhibit 0.1 -- 1\% polarization};
-\draw[white] (7.95,0.75) node { (Wang et al. 2003, Wang \& Wheeler 2008, Patat et al. 2009)};
+\draw[yellow] (7,3.25) node[left] {Photospheric-Velocity Feature (PVF)};
+\draw[yellow] (15,3.25) node[left] {High-Velocity Feature (HVF)};
+\draw[white] (7.95,2.75) node {HVF occur in nearly all SN~Ia.};
+\draw[white] (7.95,2.25) node {Most common in calcium, also found in silicon, oxygen, iron, sulfur.};
+\draw[white] (7.95,1.75) node {HVF also exhibit 0.1 -- 1\% polarization == clumpy material};
+\draw[white] (7.95,1.25) node { (Wang et al. 2003, Wang \& Wheeler 2008, Patat et al. 2009)};
+\draw[white] (7.95,0.5) node {Ca \textsc{II} near-infrared (CaNIR) consistently has HVF, does not suffer from blending.};
 \end{tikzpicture}
 }
+
 
 \frame{
 \frametitle{Evolution of HVF and PVF}
@@ -508,6 +524,21 @@ Multiple spectra and photometry (including HST) nearly every day prior to peak b
 \draw[gray] (12.5,9) node[left] {Filled = HVF};
 \draw[white] (12.5,8.5) node[left] {\contour{gray}{Hollow}\color{gray}\;= PVF};
 \end{tikzpicture}
+}
+
+\frame{
+\frametitle{Importance of HVF}
+\begin{tabular}{l}
+Only appear within first few weeks after the explosion.\\
+\\
+\\
+Can give insight into nature of system or cause of the explosion.\\
+\\
+\\
+What is the source of the material for the HVF?\\
+\hspace{2em} Related to donor star?\\
+\\
+\end{tabular}
 }
 
 %\frame{
@@ -526,16 +557,6 @@ Multiple spectra and photometry (including HST) nearly every day prior to peak b
 %\end{tikzpicture}
 %}
 
-%\frame{
-%\frametitle{Importance of HVF}
-%\begin{tabular}{l}
-%Can HVF give insight into nature of system or cause of the explosion?
-%\\
-%\\
-%What is the source of the material for the HVF?
-%\\
-%\end{tabular}
-%}
 
 
 %\frame{
@@ -656,7 +677,7 @@ Shell of material surrounding SN prior to explosion\\
 \begin{tabular}{l}
 Clumps of high velocity material ejected from SN\\
 \color{magenta}\hspace{2em} Explains polarization\\
-\color{magenta}\hspace{2em} May be greatly enhanced in freshly synthesized elements\\
+\color{magenta}\hspace{2em} Likely to be greatly enhanced in freshly synthesized elements\\
 \color{magenta}\hspace{2em} No obvious explanation for velocity evolution\\
 Material swept up as SN expands\\
 \\
@@ -676,19 +697,19 @@ Shell of material surrounding SN prior to explosion\\
 \frametitle{Source of HVF}
 \begin{footnotesize}
 \begin{tabular}{l}
-Clumps of high velocity material ejected from SN\\
-\color{magenta}\hspace{2em} Explains polarization\\
-\color{magenta}\hspace{2em} Likely be greatly enhanced in freshly synthesized elements\\
-\color{magenta}\hspace{2em} No obvious explanation for velocity evolution\\
-\sout{Material swept up as SN expands}\\
-\color{magenta}\hspace{2em} Polarization due to instabilities during interaction\\
+Clumps of high velocity material ejected from SN.\\
+\color{magenta}\hspace{2em} Explains polarization.\\
+\color{magenta}\hspace{2em} Likely to be greatly enhanced in freshly synthesized elements.\\
+\color{magenta}\hspace{2em} No obvious explanation for velocity evolution.\\
+\sout{Material swept up as SN expands.}\\
+\color{magenta}\hspace{2em} Polarization due to instabilities during interaction.\\
 \color{magenta}\hspace{2em} Related to wind from progenitor?\\
-\color{magenta}\hspace{2em} Would likely result in added blue light and synchrotron emission\\
-\color{magenta}\hspace{2em} Outer edge slows as material is swept up\\
-Outer layer of ejecta with different ionization or excitation characteristics\\
+\color{magenta}\hspace{2em} Outer edge slows as material is swept up.\\
+\color{magenta}\hspace{2em} Would result in excess blue light and synchrotron emission that is not observed.\\
+Outer layer of ejecta with different ionization or excitation characteristics.\\
 \\
 \\
-Shell of material surrounding SN prior to explosion\\
+Shell of material surrounding SN prior to explosion.\\
 \end{tabular}
 \end{footnotesize}
 }
@@ -697,19 +718,19 @@ Shell of material surrounding SN prior to explosion\\
 \frametitle{Source of HVF}
 \begin{footnotesize}
 \begin{tabular}{l}
-Clumps of high velocity material ejected from SN\\
-\color{magenta}\hspace{2em} Explains polarization\\
-\color{magenta}\hspace{2em} Likely be greatly enhanced in freshly synthesized elements\\
-\color{magenta}\hspace{2em} No obvious explanation for velocity evolution\\
-\sout{Material swept up as SN expands}\\
-\color{magenta}\hspace{2em} Polarization due to instabilities during interaction\\
+Clumps of high velocity material ejected from SN.\\
+\color{magenta}\hspace{2em} Explains polarization.\\
+\color{magenta}\hspace{2em} Likely to be greatly enhanced in freshly synthesized elements.\\
+\color{magenta}\hspace{2em} No obvious explanation for velocity evolution.\\
+\sout{Material swept up as SN expands.}\\
+\color{magenta}\hspace{2em} Polarization due to instabilities during interaction.\\
 \color{magenta}\hspace{2em} Related to wind from progenitor?\\
-\color{magenta}\hspace{2em} Would likely result in added blue light and synchrotron emission\\
-\color{magenta}\hspace{2em} Outer edge slows as material is swept up\\
-Outer layer of ejecta with different ionization or excitation characteristics\\
-\color{magenta}\hspace{2em} Some theoretical evidence this may occur (Blondin et al. 2013)\\
-\color{magenta}\hspace{2em} May not explain evolution or polarization\\
-Shell of material surrounding SN prior to explosion\\
+\color{magenta}\hspace{2em} Outer edge slows as material is swept up.\\
+\color{magenta}\hspace{2em} Would result in excess blue light and synchrotron emission that is not observed.\\
+Outer layer of ejecta with different ionization or excitation characteristics.\\
+\color{magenta}\hspace{2em} Some theoretical evidence this may occur (Blondin et al. 2013).\\
+\color{magenta}\hspace{2em} May not explain evolution or polarization.\\
+Shell of material surrounding SN prior to explosion.\\
 \end{tabular}
 \end{footnotesize}
 }
@@ -719,32 +740,32 @@ Shell of material surrounding SN prior to explosion\\
 \frametitle{Source of HVF}
 \begin{footnotesize}
 \begin{tabular}{l}
-Clumps of high velocity material ejected from SN\\
-\color{magenta}\hspace{2em} Explains polarization\\
-\color{magenta}\hspace{2em} Likely to be greatly enhanced in freshly synthesized elements\\
-\color{magenta}\hspace{2em} No obvious explanation for velocity evolution\\
-\sout{Material swept up as SN expands}\\
-\color{magenta}\hspace{2em} Polarization due to instabilities during interaction\\
+Clumps of high velocity material ejected from SN.\\
+\color{magenta}\hspace{2em} Explains polarization.\\
+\color{magenta}\hspace{2em} Likely to be greatly enhanced in freshly synthesized elements.\\
+\color{magenta}\hspace{2em} No obvious explanation for velocity evolution.\\
+\sout{Material swept up as SN expands.}\\
+\color{magenta}\hspace{2em} Polarization due to instabilities during interaction.\\
 \color{magenta}\hspace{2em} Related to wind from progenitor?\\
-\color{magenta}\hspace{2em} Would likely result in added blue light and synchrotron emission\\
-\color{magenta}\hspace{2em} Outer edge slows as material is swept up\\
-Outer layer of ejecta with different ionization or excitation characteristics\\
-\color{magenta}\hspace{2em} Some theoretical evidence this may occur (Blondin et al. 2013)\\
-\color{magenta}\hspace{2em} May not explain evolution or polarization\\
-Shell of material surrounding SN prior to explosion\\
+\color{magenta}\hspace{2em} Outer edge slows as material is swept up.\\
+\color{magenta}\hspace{2em} Would result in excess blue light and synchrotron emission that is not observed.\\
+Outer layer of ejecta with different ionization or excitation characteristics.\\
+\color{magenta}\hspace{2em} Some theoretical evidence this may occur (Blondin et al. 2013).\\
+\color{magenta}\hspace{2em} May not explain evolution or polarization.\\
+Shell of material surrounding SN prior to explosion.\\
 \color{magenta}\hspace{2em} Material from donor: evidence of H, He, C / O?\\
 \color{magenta}\hspace{2em} He shell relating to deonation?\\ 
 \color{magenta}\hspace{4em} Woosley et al. (1980), Nomoto (1982)\\
 \color{magenta}\hspace{4.5em} c.f. Shen \& Moore (2014) \& references therein \\
-\color{magenta}\hspace{2em} Polarization due to instabilities during interaction\\
-\color{magenta}\hspace{2em} Compact: no ongoing interaction --- no excess emission\\
-\color{magenta}\hspace{2em} Ca content may be sub-Solar -- super-Solar\\
-\color{magenta}\hspace{2em} Velocity evolution through expansion\\
+\color{magenta}\hspace{2em} Polarization due to instabilities during interaction.\\
+\color{magenta}\hspace{2em} Compact: no ongoing interaction --- no excess emission.\\
+\color{magenta}\hspace{2em} Ca content may be sub-Solar -- super-Solar.\\
+\color{magenta}\hspace{2em} Velocity evolution through expansion.\\
 \end{tabular}
 \end{footnotesize}
 }
 
-\setbeamertemplate{footline}{\insertsectionhead~\insertpagenumber / 5}
+\setbeamertemplate{footline}{\insertsectionhead~\insertpagenumber / 4}
 
 \section{Compact circumstellar shell \& interaction}
 \setcounter{page}{1}
@@ -778,16 +799,17 @@ Shell of material surrounding SN prior to explosion\\
 \frametitle{Hydrodynamics of interaction (1-D)}
 \begin{tikzpicture}
 \draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\tkzpicmyps{3.1}{1.0}{10.0}{opacity_Si_run57}
+\draw[white] (8.0,8.5) node {FLASH (Fryxell et al. 2000), parameters: mass, radius, density profile of shell.};
+\tkzpicmyps{3.55}{1.0}{9.0}{opacity_Si_run57}
 \draw[white] (8.0,0.5) node {Mulligan \& Wheeler 2017};
-\draw[black] (5.25,6.75) node[font=\small] {Ejecta};
-\draw[black] (5.25,6.25) node[font=\small] {(PVF)};
-\draw[red] (8.0,5.5) node {Shell};
-\draw[red] (8.0,5) node {(HVF)};
-\draw[red,<-] (6.2,7.75)--(6.5,7.75) node[right] {Density enhancement};
-\draw[red] (6.7,7.25) node[right] {(contact discontinuity)};
-\fill[white] (3.1,1.0) rectangle +(0.86,7.7);
-\draw[black] (3.5,5) node[rotate=90] {Normalized density};
+\draw[black] (5.75,6.25) node[font=\small] {Ejecta};
+\draw[black] (5.75,5.75) node[font=\small] {(PVF)};
+\draw[red] (8.0,5.0) node {Shell};
+\draw[red] (8.0,4.5) node {(HVF)};
+\draw[red,<-] (6.30,7.00)--+(0.3,0.0) node[right] {Density enhancement};
+\draw[red] (6.9,6.50) node[right] {(contact discontinuity)};
+\fill[white] (3.6,1.0) rectangle +(0.86,9.0*8.5/11.0);
+\draw[black] (3.95,5) node[rotate=90] {Normalized density};
 \end{tikzpicture}
 }
 
@@ -795,9 +817,9 @@ Shell of material surrounding SN prior to explosion\\
 \frametitle{Synthetic spectra using \textsc{syn++}}
 \begin{tikzpicture}
 \draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\draw[white] (5.0,8.75) node {\textsc{syn++} (Thomas et al. 2011)};
-\draw[white] (5.0,7.75) node[right] {Allows selection and control of individual ions};
-\draw[white] (5.0,8.25) node[right] {specify $T_{\mathrm{PS}}$, $v_{\mathrm{PS}}$, $T_{\mathrm{exc}}$};
+\draw[white] (5.0,8.75) node {\textsc{syn++} (Thomas et al. 2011) modified for arbitrary profile};
+\draw[white] (5.0,8.25) node[right] {Allows selection and control of individual ions};
+\draw[white] (5.0,7.75) node[right] {specify $T_{\mathrm{PS}}$, $v_{\mathrm{PS}}$, $T_{\mathrm{exc}}$};
 \tkzpicmyps{3.1}{1.0}{8.0}{MW18a_Fig_4c}
 \draw[white] (8.0,0.5) node {Mulligan \& Wheeler 2018};
 \end{tikzpicture}
@@ -877,14 +899,15 @@ Shell of material surrounding SN prior to explosion\\
 \frametitle{Identifying the composition of the shell}
 \begin{tikzpicture}
 \draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\tkzpicmyps{0.5}{3.5}{7}{abundance_Solar_mass}
-\tkzpicmyps{8.5}{3.5}{7}{abundance_Solar_velocity}
-\draw[white] (8,3.0) node {Use \textsc{tardis} (Kerzendorf \& Sims 2013) to generate spectra from models};
-\draw[white] (8,2.5) node {Ejecta: Gamezo et al. (2005) + Seitenzahl et al. (2013)};
-\draw[white] (8,2.0) node {Shell substrate: hydrogen, helium, or carbon/oxygen};
-\draw[white] (8,1.5) node {Shell Ca abundance: 0 -- 7~dex relative to Solar};
-\draw[white] (8,1.0) node {Also: Shen \& Moore (2014) helium envelope}; 
-\draw[white] (8,0.5) node {Mulligan, Zhang, \& Wheeler (in prep.)};
+\tkzpicmyps{1.75}{4.0}{6}{abundance_Solar_mass}
+\tkzpicmyps{8.25}{4.0}{6}{abundance_Solar_velocity}
+\draw[white] (8,3.75) node {Use \textsc{tardis} (Kerzendorf \& Sims 2013) to generate spectra from models.};
+\draw[white] (8,3.25) node {NLTE, requires explicit specification of composition.};
+\draw[white] (8,2.75) node {Ejecta: Gamezo et al. (2005) + Seitenzahl et al. (2013) N100};
+\draw[white] (8,2.25) node {Shell substrate: hydrogen, helium, or carbon/oxygen};
+\draw[white] (8,1.75) node {Shell Ca abundance: 0 -- 7~dex relative to Solar};
+\draw[white] (8,1.25) node {Also: Shen \& Moore (2014) helium envelope detonations}; 
+\draw[white] (8,0.75) node {Mulligan, Zhang, \& Wheeler (in prep.)};
 \end{tikzpicture}
 }
 
@@ -893,16 +916,17 @@ Shell of material surrounding SN prior to explosion\\
 \frametitle{Shen \& Moore (2014) envelopes}
 \begin{tikzpicture}
 \draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\tkzpicmyps{0.5}{3.0}{5}{d02_Seit+0p0_Shen-XpXXX}
-\tkzpicmyps{5.5}{3.0}{5}{d05_Seit+0p0_Shen-XpXXX}
-\tkzpicmyps{10.5}{3.0}{5}{d09_Seit+0p0_Shen-XpXXX}
-\draw[white] (3.0,2.75) node {2~d};
-\draw[white] (8.0,2.75) node {5~d};
-\draw[white] (13.0,2.75) node {9~d};
-\draw[white] (8,2.0) node {Selected envelopes do very poor job at 2 \& 5~d};
-\draw[white] (8,1.5) node {Tighly constrained envelope near 0.008\Msun may generate accurate spectrum};
-\draw[white] (8,1.0) node {No explanation why mass would be 0.008\Msun };
-\draw[white] (8,0.5) node {Mulligan, Zhang, \& Wheeler (in prep.)};
+\draw[white] (8.0,8.0) node {0.005, 0.01, 0.02\Msun -- range of expected shell mass \& contains calcium};
+\tkzpicmyps{0.5}{3.5}{5}{d02_Seit+0p0_Shen-XpXXX}
+\tkzpicmyps{5.5}{3.5}{5}{d05_Seit+0p0_Shen-XpXXX}
+\tkzpicmyps{10.5}{3.5}{5}{d09_Seit+0p0_Shen-XpXXX}
+\draw[white] (3.0,3.25) node {2~d};
+\draw[white] (8.0,3.25) node {5~d};
+\draw[white] (13.0,3.25) node {9~d};
+\draw[white] (8,2.5) node {Selected envelopes do very poor job at 2 \& 5~d};
+\draw[white] (8,2.0) node {Tighly constrained envelope near 0.008\Msun may generate accurate spectrum};
+\draw[white] (8,1.5) node {No explanation why mass would be 0.008\Msun };
+\draw[white] (8,0.75) node {Mulligan, Zhang, \& Wheeler (in prep.)};
 \end{tikzpicture}
 }
 
@@ -913,6 +937,9 @@ Shell of material surrounding SN prior to explosion\\
 \tkzpicmyps{0.5}{3.0}{5}{d02_Seit+0p0_H-Solar+XpX}
 \tkzpicmyps{5.5}{3.0}{5}{d02_Seit+0p0_He-Solar+XpX}
 \tkzpicmyps{10.5}{3.0}{5}{d02_Seit+0p0_CO-Solar+XpX}
+\draw[white] (3.0,3.25) node {H (2~d)};
+\draw[white] (8.0,3.25) node {He (2~d)};
+\draw[white] (13.0,3.25) node {C/O (2~d)};
 \draw[white] (8,2.0) node {Substrate does not appear in the spectrum};
 \draw[white] (8,0.5) node {Mulligan, Zhang, \& Wheeler (in prep.)};
 \end{tikzpicture}
@@ -928,7 +955,7 @@ Shell of material surrounding SN prior to explosion\\
 \draw[white] (3.0,2.75) node {2~d};
 \draw[white] (8.0,2.75) node {5~d};
 \draw[white] (13.0,2.75) node {9~d};
-\draw[white] (8,2.0) node {Vary Ca abundance relative to Solar by 0 -- 4~dex};
+\draw[white] (8,2.0) node {Vary calcium abundance relative to Solar by factor of 1 -- $10^4$ (0 -- 4~dex).};
 \draw[white] (8,0.5) node {Mulligan, Zhang, \& Wheeler (in prep.)};
 \end{tikzpicture}
 }
@@ -944,7 +971,8 @@ Shell of material surrounding SN prior to explosion\\
 \draw[white] (3.0,2.75) node {2~d};
 \draw[white] (8.0,2.75) node {5~d};
 \draw[white] (13.0,2.75) node {9~d};
-\draw[white] (8,2.0) node {Vary Ca yield relative to Seitenzahl (2013) N100 by -5 -- 0~dex};
+\draw[white] (8,2.0) node {Vary calcium yield in ejecta relative to Seitenzahl (2013) N100 by $10^{-5}$ -- 1 (-5 -- 0~dex).};
+\draw[white] (8,1.5) node {Need slower photosphere or different structure of calcium in ejecta?};
 \draw[white] (8,0.5) node {Mulligan, Zhang, \& Wheeler (in prep.)};
 \end{tikzpicture}
 }
@@ -960,10 +988,8 @@ Shell of material surrounding SN prior to explosion\\
 \draw[white] (3.0,2.75) node {2~d};
 \draw[white] (8.0,2.75) node {5~d};
 \draw[white] (13.0,2.75) node {9~d};
-\draw[white] (8,2.0) node {Shell causes shallow HVF at 5~d --- gradient in abundance?};
-\draw[white] (8,1.5) node {PVF too blue at 9~d --- problems with structure of ejecta or $v_{\mathrm{PS}}$?};
-\draw[white] (8,1.0) node {Need to crank up Ca abundance with time?};
-\draw[white] (8,0.5) node {Mulligan, Zhang, \& Wheeler (in prep.)};
+\draw[white] (8,2.0) node {Need to crank up calcium abundance in shell with time?};
+\draw[white] (8,0.75) node {Mulligan, Zhang, \& Wheeler (in prep.)};
 \end{tikzpicture}
 }
 
@@ -971,18 +997,18 @@ Shell of material surrounding SN prior to explosion\\
 \frametitle{Findings \& Implications}
 \begin{footnotesize}
 \begin{tabular}{l}
+\color{white}Shell model does OK job of generating HVF\\
+\hspace{2em} Velocity of HVF at 5+ days better explained by shell with mass 0.005\Msunp.\\
+\hspace{2em} Shallow HVF, too blue\\
+\hspace{4em} Gradient in calcium abundance in the shell?\\
+\hspace{2em} HVF insufficiently distinct.\\
+\hspace{4em} Too much calcium in ejecta at high velocity?\\
+\color{white}Silicon or other HVF?\\
 \color{white}Solar -- super-Solar abundance of calcium\\
 \hspace{2em} Where does so much calcium come from?\\
 \hspace{4em} Is \textsc{tardis} getting the ion populations right?\\
 \hspace{2em} Why are HVF so common?\\
 \hspace{4em} If SN~Ia come from old populations, expect sub-solar calcium.\\
-\color{white}Shell model does OK job of generating HVF\\
-\hspace{2em} Velocity of HVF at 5+ days better explained by shell with mass 0.005\Msunp.\\
-\hspace{2em} HVF insufficiently distinct.\\
-\hspace{4em} Too much Ca in ejecta at high velocity?\\
-\hspace{2em} Shallow HVF, too blue\\
-\hspace{4em} Gradient in calcium abundance in the shell?\\
-\color{white}Silicon or other HVF?\\
 \hspace{2em} No HVF besides calcium.\\
 \hspace{2em} Suggests need for super-Solar content to get HVF.\\
 \color{white}Substrate does not appear in spectra\\
@@ -1000,7 +1026,7 @@ Shell of material surrounding SN prior to explosion\\
 \frame{
 \frametitle{Questions}
 \begin{tabular}{l}
-\color{white}Why does the Ca content need to increase with time?\\
+\color{white}Why does the calcium content need to increase with time?\\
 \hspace{2em} Artificial way of cranking up Ca \textsc{II} abundance.\\
 \hspace{2em} Physics missing in \textsc{tardis}?\\
 \hspace{2em} Evidence of sweeping up material instead of expanding shell?\\
@@ -1025,19 +1051,21 @@ Shell of material surrounding SN prior to explosion\\
 \frametitle{Summary}
 \begin{tabular}{l}
 \color{white}HVF in SN~Ia\\
-\hspace{2em} $\sim$30,000 (1~d) -- $\sim$20,000\kms (peak brightness)\\
-\hspace{2em} Polarized = clumpy.\\
-\hspace{2em} Disappear around the time of peak brightness.\\
-\hspace{2em} Distinct from PVF.\\
+\hspace{1.5em} $\sim$30,000 (1~d) -- $\sim$20,000\kms (peak brightness)\\
+\hspace{1.5em} Polarized = clumpy.\\
+\hspace{1.5em} Disappear around the time of peak brightness.\\
+\hspace{1.5em} Distinct from PVF.\\
+\\
 \color{white}Interaction between SN \& compact, circumstellar shell:\\
-\hspace{2em} Interaction done in seconds -- no excess radiation at epochs when SNe are observed.\\
-\hspace{2em} Velocity of contact discontinuity $\sim$15 -- 25,000\kmsp.\\
-\hspace{2em} Maximum velocity of shell $\sim$ 100,000\kmsp.
-\hspace{2em} Mass of $\sim$0.01\Msun; 0.005\Msun explains velocity of HVF at $>$ 1 week after explosion.
-\hspace{2em} Requires Solar -- super-Solar calcium abundance.\\
-\hspace{2em} Requires super-Solar silicon abundance?\\
-\hspace{2em} Substrate unclear -- won't show up in spectra.\\
-\hspace{2em} If shell is associated with helium envelope \& detonation, needs to be $\sim$0.008\Msunp.\\
+\hspace{1.5em} Interaction done in seconds -- no excess radiation at epochs when SNe are observed.\\
+\hspace{1.5em} Velocity of contact discontinuity $\sim$15 -- 25,000\kmsp.\\
+\hspace{1.5em} Maximum velocity of shell $\sim$ 100,000\kmsp.\\
+\hspace{1.5em} Mass of $\sim$0.01\Msun; 0.005\Msun explains velocity of HVF at $>$ 1 week after explosion.\\
+\hspace{1.5em} Requires Solar -- super-Solar calcium abundance?\\
+\hspace{1.5em} Requires super-Solar silicon abundance?\\
+\hspace{1.5em} Substrate unclear -- won't show up in spectra.\\
+\hspace{1.5em} If shell is associated with helium envelope \& detonation, needs to be narrowly defined mass.\\
+\hspace{1.5em} Still not clear if shell model explains HVF.\\
 \end{tabular}
 }
 
