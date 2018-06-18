@@ -50,6 +50,15 @@
 	}
 ];
 }
+\newcommand{\tkzpicwh}[5]{\filldraw [fill=white](#1,#2) rectangle +(#3,#4) [path picture=
+	{
+		\node at (path picture bounding box.center) 
+		{
+			\includegraphics[width=#3cm,height=#4cm]{#5}
+		};
+	}
+];
+}
 \newcommand{\Msunp}{\;$\mathrm{M}_\odot$}
 \newcommand{\Msun}{\;$\mathrm{M}_\odot$\;}
 \newcommand{\Lsunp}{\;$\mathrm{L}_\odot$}
@@ -80,11 +89,14 @@
 \frame{
 \frametitle{Acknowledgments}
 \begin{center}
-\begin{tabular}{ll}
-J. Craig Wheeler (Advisor) & Jeffrey Silverman\\
+\setlength{\tabcolsep}{36pt}
+\begin{tabular}{cc}
+\textbf{Advisor} & \textbf{Also}\\
+\hline
+J. Craig Wheeler & Jeffrey Silverman\\
  & G. ``Howie'' Marion\\
-\cline{1-1} \multicolumn{1}{c}{\textbf{Committee}} & Harriet Dinerstein\\
-Volker Bromm & Chris Sneden\\
+\cline{1-1} \textbf{Committee} & Kaicheng Zhang\\
+Volker Bromm & Department faculty \& staff\\
 Milos Milosavljevic & Mark McCormick\\
 E. ``Rob'' Robinson & Jen Rios \\
 Joszef Vinko & Friends \& Family\\
@@ -111,6 +123,7 @@ Joszef Vinko & Friends \& Family\\
 \begin{tikzpicture}
 \draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
 \tkzpicmyps{0.1}{0.5}{8.912}{SN2011fe_55806p2}
+\tkzpicwh{1.4}{7.3}{7.25}{0.50}{SN2011fe_55802p2_rainbow}
 \tkzpic{9.012}{0.5}{6.887}{6.887}{SN2011fe_light_curve}
 \draw[black] (4.556,6.887) node {SN 2011fe @ MJD 55806.2};
 \draw[gray] (4.556,0.5)++(0.0,4.7) node {Si};
@@ -150,12 +163,14 @@ Joszef Vinko & Friends \& Family\\
 \\
 \color{white}\textbf{Brightest standardizable candle}\\
 \hspace{2em}Peak luminosity $M_V\sim-19$ ($5\times 10^9$\Lsunp)\\
-\hspace{2em}Used to discover (and measure) dark energy (Riess et al. 1998, Perlmutter et al. 1999)\\
+\hspace{2em}Useful to measure distances to most distant visible galaxies\\
+\hspace{2em}Used to measure expansion of the universe\\
+\hspace{2em}Used to discover acceleration of expansion (Dark Energy) (Riess et al. 1998, Perlmutter et al. 1999)\\
 \\
 \\
 \\
 \color{white}\textbf{Chemical enrichment}\\
-\hspace{2em} Each supernova releases $\sim 10^{33}$\;g of iron, silicon, sulfur\\
+\hspace{2em} Each supernova releases $\sim 10^{33}$\;g each of iron, silicon, sulfur (Seitenzahl et al. 2013)\\
 \end{tabular}
 }
 
@@ -186,101 +201,101 @@ Joszef Vinko & Friends \& Family\\
 \end{tikzpicture}
 }
 
-\frame{
-\frametitle{You're all just a bunch of degenerates}
-\begin{tikzpicture}
-\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\fill[white]  (7.85,6) circle(3);
-\draw[blue,->]  (7.75,6) -- (7.75,8.7);
-\draw[black,<-]  (7.95,6) -- (7.95,8.7);
-\draw[blue]  (7,7.7) node {pressure}; 
-\draw[black]  (8.55,7.1) node {gravity}; 
-\fill[green]  (2.5,6) circle(0.03) ++(0,0.3) node {Electron};
-\draw[green]  (2.5,5) ++(0,0.3) node {Typical gas};
+%\frame{
+%\frametitle{You're all just a bunch of degenerates}
+%\begin{tikzpicture}
+%\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
+%\fill[white]  (7.85,6) circle(3);
+%\draw[blue,->]  (7.75,6) -- (7.75,8.7);
+%\draw[red,<-]  (7.95,6) -- (7.95,8.7);
+%\draw[blue]  (7,7.7) node {pressure}; 
+%\draw[red]  (8.55,7.1) node {gravity}; 
+%\fill[green]  (2.5,6) circle(0.03) ++(0,0.3) node {Electron};
+%\draw[green]  (2.5,5) ++(0,0.3) node {Typical gas};
 %\node fill[green]  (1.5,5) circle(0.03) draw[green,->] (1.5,5) -- +(15:0.3);
-\foreach \x in {1,...,10}{
-	\coordinate (A) at ($ (2.5,4.3) + 0.5*(rand, rand)$);
-	\fill[green]  (A) circle(0.03);
-	\draw[green,->] (A) -- +(rand*180.0:0.2);
- }
-\draw[green] (2.5,3) ++ (0,0.3) node {Degenerate gas};
-\foreach \x in {1,...,10}{
-	\foreach \y in {1,...,5}{
-		\coordinate (A) at ($ (2.2,2.6) + 0.06*(\x, \y)$);
-		\coordinate (B) at ($ (2.2,2.6) + 0.06*(\x, \y) + (0.030,0.030)$);
-		\fill[green]  (A) circle(0.025);
-		\fill[green]  (B) circle(0.025);
-	}
-}
-\draw[white] (2.5,2) node {Electrons can't fit on top of each other} ++(0,-0.5) node {(limited number of states)};
+%\foreach \x in {1,...,10}{
+%	\coordinate (A) at ($ (2.5,4.3) + 0.5*(rand, rand)$);
+%	\fill[green]  (A) circle(0.03);
+%	\draw[green,->] (A) -- +(rand*180.0:0.2);
+% }
+%\draw[green] (2.5,3) ++ (0,0.3) node {Degenerate gas};
+%\foreach \x in {1,...,10}{
+%	\foreach \y in {1,...,5}{
+%		\coordinate (A) at ($ (2.2,2.6) + 0.06*(\x, \y)$);
+%		\coordinate (B) at ($ (2.2,2.6) + 0.06*(\x, \y) + (0.030,0.030)$);
+%		\fill[green]  (A) circle(0.025);
+%		\fill[green]  (B) circle(0.025);
+%	}
+%}
+%\draw[white] (2.5,2) node {Electrons can't fit on top of each other} ++(0,-0.5) node {(limited number of states)};
+%
+%\end{tikzpicture}
+%}
 
-\end{tikzpicture}
-}
+%\frame{
+%\frametitle{Who wins?}
+%\begin{tikzpicture}
+%\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
+%\fill[white]  (7.85,6) circle(3);
+%\draw[blue,->]  (7.75,6) -- (7.75,8.7);
+%\draw[red,<-]  (7.95,6) -- (7.95,8.7);
+%\draw[blue]  (7,7.7) node {pressure}; 
+%\draw[red]  (8.55,7.1) node {gravity}; 
+%\fill[green]  (2.5,6) circle(0.03) ++(0,0.3) node {Electron};
+%\draw[green]  (2.5,5) ++(0,0.3) node {Typical gas};
+%%\node fill[green]  (1.5,5) circle(0.03) draw[green,->] (1.5,5) -- +(15:0.3);
+%\foreach \x in {1,...,10}{
+%	\coordinate (A) at ($ (2.5,4.3) + 0.5*(rand, rand)$);
+%	\fill[green]  (A) circle(0.03);
+%	\draw[green,->] (A) -- +(rand*180.0:0.2);
+% }
+%\draw[green] (2.5,3) ++ (0,0.3) node {Degenerate gas};
+%\foreach \x in {1,...,10}{
+%	\foreach \y in {1,...,5}{
+%		\coordinate (A) at ($ (2.2,2.6) + 0.06*(\x, \y)$);
+%		\coordinate (B) at ($ (2.2,2.6) + 0.06*(\x, \y) + (0.030,0.030)$);
+%		\fill[green]  (A) circle(0.025);
+%		\fill[green]  (B) circle(0.025);
+%	}
+%}
+%\draw[white] (2.5,2) node {Electrons can't fit on top of each other} ++(0,-0.5) node {(limited number of states)};
+
+%\draw[white] (12.5,4) node[red,thick] {Gravity} ++(0,-0.5) node[white]{star begins to collapse};
+%\draw[white] (12.5,6) node[gray,thick] {Neither} ++(0,-0.5) node[white]{boring};
+%\draw[white] (12.5,8.5) node[blue,thick] {Pressure} ++(0,-0.5) node[white]{star expands or explodes};
+%\end{tikzpicture}
+%}
 
 \frame{
-\frametitle{Who wins?}
-\begin{tikzpicture}
-\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\fill[white]  (7.85,6) circle(3);
-\draw[blue,->]  (7.75,6) -- (7.75,8.7);
-\draw[black,<-]  (7.95,6) -- (7.95,8.7);
-\draw[blue]  (7,7.7) node {pressure}; 
-\draw[black]  (8.55,7.1) node {gravity}; 
-\fill[green]  (2.5,6) circle(0.03) ++(0,0.3) node {Electron};
-\draw[green]  (2.5,5) ++(0,0.3) node {Typical gas};
-%\node fill[green]  (1.5,5) circle(0.03) draw[green,->] (1.5,5) -- +(15:0.3);
-\foreach \x in {1,...,10}{
-	\coordinate (A) at ($ (2.5,4.3) + 0.5*(rand, rand)$);
-	\fill[green]  (A) circle(0.03);
-	\draw[green,->] (A) -- +(rand*180.0:0.2);
- }
-\draw[green] (2.5,3) ++ (0,0.3) node {Degenerate gas};
-\foreach \x in {1,...,10}{
-	\foreach \y in {1,...,5}{
-		\coordinate (A) at ($ (2.2,2.6) + 0.06*(\x, \y)$);
-		\coordinate (B) at ($ (2.2,2.6) + 0.06*(\x, \y) + (0.030,0.030)$);
-		\fill[green]  (A) circle(0.025);
-		\fill[green]  (B) circle(0.025);
-	}
-}
-\draw[white] (2.5,2) node {Electrons can't fit on top of each other} ++(0,-0.5) node {(limited number of states)};
-
-\draw[white] (12.5,4) node[black,thick] {Gravity} ++(0,-0.5) node[white]{star begins to collapse};
-\draw[white] (12.5,6) node[gray,thick] {Neither} ++(0,-0.5) node[white]{boring};
-\draw[white] (12.5,8.5) node[blue,thick] {Pressure} ++(0,-0.5) node[white]{star expands or explodes};
-\end{tikzpicture}
-}
-
-\frame{
-\frametitle{How to get there}
+\frametitle{How to explode}
 \begin{tabular}{l}
-Add mass to make gravity win (how?)\\
-At 1.4$\;\mathrm{M}_{\odot}$ gravity starts to win\\
+Add mass to make gravity overcome pressure (how?)\\
+At 1.4$\;\mathrm{M}_{\odot}$ gravity starts win\\
 \hspace{2em}Star begins fusing carbon / oxygen $\rightarrow$ (Ne, Mg, Ar, Si, S, Ca)\\
-Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy --- pressure wins!\\
+Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy --- explosion!\\
 \end{tabular}
 \begin{tikzpicture}
 \draw[opacity=0,yellow] (0.1,0.1) rectangle (14.6,7);
-\fill[white] (2,2.5) circle(2);
+\fill[white] (2,3.0) circle(2);
 \foreach \x in {1,...,30}{
-		\coordinate (A) at ($ (2,5.4) + (90+rand*15.0:rand*1.5)$);
+		\coordinate (A) at ($ (2,5.5) + (-90+rand*15.0:rand*1.5)$);
 		\fill[white]  (A) circle(0.01);
 }
 \foreach \x in {1,...,12}{
-		\coordinate (A) at ($ (2,2.5)+ (\x*360.0/12.0:1.5)$);
-		\coordinate (B) at ($ (2,2.5)+ (\x*360.0/12.0:1.9)$);
-		\draw[black,<-] (A) -- (B);
+		\coordinate (A) at ($ (2,3)+ (\x*360.0/12.0:1.5)$);
+		\coordinate (B) at ($ (2,3)+ (\x*360.0/12.0:1.9)$);
+		\draw[red,<-] (A) -- (B);
 }
-\fill[white] (7,2.5) circle(1.75);
+\fill[white] (7,3) circle(1.75);
 \foreach \x in {1,...,12}{
-		\coordinate (A) at ($ (7,2.5)+ (\x*360.0/12.0:0.3)$);
-		\coordinate (B) at ($ (7,2.5)+ (\x*360.0/12.0:1.5)$);
+		\coordinate (A) at ($ (7,3)+ (\x*360.0/12.0:0.3)$);
+		\coordinate (B) at ($ (7,3)+ (\x*360.0/12.0:1.5)$);
 		\draw[gray,thick,->] (A) -- (B);
 }
-\fill[white] (12,2.5) circle(2.5);
+\fill[white] (12,3) circle(2.5);
 \foreach \x in {1,...,12}{
-		\coordinate (A) at ($ (12,2.5)+ (\x*360.0/12.0:0.3)$);
-		\coordinate (B) at ($ (12,2.5)+ (\x*360.0/12.0:2.4)$);
+		\coordinate (A) at ($ (12,3)+ (\x*360.0/12.0:0.3)$);
+		\coordinate (B) at ($ (12,3)+ (\x*360.0/12.0:2.4)$);
 		\draw[blue,thick,->] (A) -- (B);
 }
 \end{tikzpicture}
@@ -301,7 +316,7 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 \fill[white] (10,1.5) circle(0.05);
 \draw[white,->] (11,3)++(-60:1) arc [start angle=-60, end angle=60, radius=1]; 
 \draw[white,->] (9,3)++(120:1) arc [start angle=120, end angle=240, radius=1]; 
-\draw[gray] (10,1) node {Single Degenerate};
+\draw[gray] (10,1) node {Single degenerate};
 \draw[gray] (10,0.5) node {WD -- star};
 \end{tikzpicture}
 }
@@ -312,11 +327,11 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 \hspace{2em} Look for surviving companion\\
 \\
 \\
-\hspace{2em} Look for evidence of interaction with the companion\\
+\hspace{2em} Look for evidence of interaction with the companion -- e.g. excess UV (Kasen et al. 2010)\\
 \\
 \\
 \color{white}Both\\
-\hspace{2em} Look for envelope of material donated by companion\\
+\hspace{2em} Look for evidence of material donated by companion\\
 \\
 \end{tabular}
 }
@@ -327,11 +342,11 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 \hspace{2em} Look for surviving companion\\
 \color{magenta}\hspace{4em} Maybe for Tycho's SN --- c.f. Ruiz-Lapuente et al. (2004)\\
 \color{magenta}\hspace{4em} Still not certain --- c.f. Kerzendorf et al. (2018)\\
-\hspace{2em} Look for evidence of interaction with the companion\\
+\hspace{2em} Look for evidence of interaction with the companion -- e.g. excess UV (Kasen et al. 2010)\\
 \\
 \\
 \color{white}Both\\
-\hspace{2em} Look for envelope of material donated by companion\\
+\hspace{2em} Look for evidence of material donated by companion\\
 \\
 \end{tabular}
 }
@@ -342,11 +357,11 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 \hspace{2em} Look for surviving companion\\
 \color{magenta}\hspace{4em} Maybe for Tycho's SN --- c.f. Ruiz-Lapuente et al. (2004)\\
 \color{magenta}\hspace{4em} Still not certain --- c.f. Kerzendorf et al. (2018)\\
-\hspace{2em} Look for evidence of interaction with the companion\\
+\hspace{2em} Look for evidence of interaction with the companion -- e.g. excess UV (Kasen et al. 2010)\\
 \color{magenta}\hspace{4em} c.f. Cao et al. (2015), Marion et al. (2016), Hosseinzadeh et al. (2017),\\
 \color{magenta}\hspace{5em} Jiang et al. (2017), Miller et al. (2018)\\
 \color{white}Both\\
-\hspace{2em} Look for envelope of material donated by companion\\
+\hspace{2em} Look for evidence of material donated by companion\\
 \\
 \end{tabular}
 }
@@ -358,11 +373,11 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 \hspace{2em} Look for surviving companion\\
 \color{magenta}\hspace{4em} Maybe for Tycho's SN --- c.f. Ruiz-Lapuente et al. (2004)\\
 \color{magenta}\hspace{4em} Still not certain --- c.f. Kerzendorf et al. (2018)\\
-\hspace{2em} Look for evidence of interaction with the companion\\
+\hspace{2em} Look for evidence of interaction with the companion -- e.g. excess UV (Kasen et al. 2010)\\
 \color{magenta}\hspace{4em} c.f. Cao et al. (2015), Marion et al. (2016), Hosseinzadeh et al. (2017),\\
 \color{magenta}\hspace{5em} Jiang et al. (2017), Miller et al. (2018)\\
 \color{white}Both\\
-\hspace{2em} Look for envelope of material donated by companion\\
+\hspace{2em} Look for evidence of material donated by companion\\
 \color{red}\hspace{4em} Look for it in early spectra\\
 \end{tabular}
 }
@@ -371,6 +386,20 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 
 \section{Early spectra \& high-velocity features}
 \setcounter{page}{1}
+\frame{
+\frametitle{SN~2011fe}
+\begin{tabular}{l}
+\\
+First observed within $\sim$1~d after the explosion occurred (Nugent 2011)\\
+\\
+Nearby (20 million light years / 6.4~Mpc) in Pinwheel galaxy (M101)\\
+\\
+Peak V brightness of $\sim$10 (bright enough to see in good binoculars)\\
+\\
+Multiple spectra and photometry (including HST) nearly every day prior to peak brightness\\
+\end{tabular}
+}
+
 \frame{\frametitle{Early spectra of SN~2011fe}
 \begin{tikzpicture}
 \draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
@@ -454,14 +483,16 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 %\begin{center}
 \begin{tikzpicture}
 \draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\tkzpic{0.4}{2.5}{15}{4.5}{Childress_Fits}
-\draw[white] (7.6,7.5) node {SN 2005cf (Childress et al. 2014)};
-\draw[blue] (7.15,4.8) node {HVF};
-\draw[magenta] (8.5,5.1) node {PVF};
-\draw[magenta] (3.3,5.1) node {PVF};
-\draw[green!70!black] (12.4,6.05) node[font=\scriptsize] {Si II};
-\draw[blue] (11.75,4.7) node[font=\scriptsize] {HVF};
-\draw[magenta] (13.4,5.1) node[font=\scriptsize] {PVF};
+\tkzpic{0.4}{3.5}{15}{4.5}{Childress_Fits}
+\draw[white] (7.6,8.5) node {SN 2005cf (Childress et al. 2014)};
+\draw[blue] (7.15,5.8) node {HVF};
+\draw[magenta] (8.5,6.1) node {PVF};
+\draw[magenta] (3.3,6.1) node {PVF};
+\draw[green!70!black] (12.4,7.05) node[font=\scriptsize] {Si II};
+\draw[blue] (11.75,5.7) node[font=\scriptsize] {HVF};
+\draw[magenta] (13.4,6.1) node[font=\scriptsize] {PVF};
+\draw[yellow] (7,2.75) node[left] {Photospheric-Velocity Feature (PVF)};
+\draw[yellow] (15,2.75) node[left] {High-Velocity Feature (HVF)};
 \draw[white] (7.95,2) node {CaNIR does not suffer from blending, consistently has HVF};
 \draw[white] (7.95,1.25) node {HVF also exhibit 0.1 -- 1\% polarization};
 \draw[white] (7.95,0.75) node { (Wang et al. 2003, Wang \& Wheeler 2008, Patat et al. 2009)};
@@ -479,117 +510,129 @@ Star detonates (how?), resulting in production of Fe, Co, Ni, lots of energy ---
 \end{tikzpicture}
 }
 
-\frame{
-\frametitle{Evolution of HVF and PVF}
-\begin{tikzpicture}
-\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\tkzpic{1}{2.5}{7}{5.6}{Silverman_CaNIR_velocity}
-\tkzpicmyps{8.0}{2.5}{7.0}{Silverman_Total_pEW}
-\draw[white] (7.95,2) node {(Silverman et al. 2015; Mulligan \& Wheeler 2017)};
-\draw[gray] (7.4,7.5) node[left,font=\scriptsize] {Filled = HVF};
-\draw[white] (7.4,7.0) node[left,font=\scriptsize] {\contour{gray}{Hollow}\color{gray}\;= PVF};
-\draw[black] (12.0,7.3) -- +(0.3,0) node[right,font=\scriptsize] {Average};
-\draw[black,thick] (12.1,7.25) -- (12.2,7.35);
-\draw[black,thick] (12.1,7.35) -- (12.2,7.25);
-\draw[gray] (12.0,7.0) -- +(0.3,0) node[right,font=\scriptsize] {Individual SNe};
-\end{tikzpicture}
-}
+%\frame{
+%\frametitle{Evolution of HVF and PVF}
+%\begin{tikzpicture}
+%\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
+%\tkzpic{1}{2.5}{7}{5.6}{Silverman_CaNIR_velocity}
+%\tkzpicmyps{8.0}{2.5}{7.0}{Silverman_Total_pEW}
+%\draw[white] (7.95,2) node {(Silverman et al. 2015; Mulligan \& Wheeler 2017)};
+%\draw[gray] (7.4,7.5) node[left,font=\scriptsize] {Filled = HVF};
+%\draw[white] (7.4,7.0) node[left,font=\scriptsize] {\contour{gray}{Hollow}\color{gray}\;= PVF};
+%\draw[black] (12.0,7.3) -- +(0.3,0) node[right,font=\scriptsize] {Average};
+%\draw[black,thick] (12.1,7.25) -- (12.2,7.35);
+%\draw[black,thick] (12.1,7.35) -- (12.2,7.25);
+%\draw[gray] (12.0,7.0) -- +(0.3,0) node[right,font=\scriptsize] {Individual SNe};
+%\end{tikzpicture}
+%}
+
+%\frame{
+%\frametitle{Importance of HVF}
+%\begin{tabular}{l}
+%Can HVF give insight into nature of system or cause of the explosion?
+%\\
+%\\
+%What is the source of the material for the HVF?
+%\\
+%\end{tabular}
+%}
 
 
-
-\frame{
-\frametitle{Cause of PVF \& P Cygni emission}
+%\frame{
+%\frametitle{Cause of PVF \& P Cygni emission}
 %\begin{center}
-\begin{tikzpicture}
-\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\fill[cyan] (4.5,4.5) circle (3.5);
-\fill[magenta] (4.5,4.5) circle (3);
-\fill[white] (4.5,4.5) circle (2);
-\draw[yellow, snake it, ->,thick] (6.5,4.5) -- +(4,0);
-\draw[yellow, snake it, ->,thick] (4.5,6.5) -- +(0,2.5);
-\draw[yellow,opacity=0.75, snake it, ->,thick] (4.5,7.0) -- +(4,0);
-\draw[yellow,opacity=0.75, snake it, ->,thick] (6.75,4.5) -- +(60:1);
-\draw[yellow,opacity=0.75, snake it, ->,thick] (7.0,4.5) -- +(-60:1);
-\draw[yellow,opacity=0.75, snake it, ->,thick] (7.25,4.5) -- +(60:1);
-\draw[yellow,opacity=0.75, snake it, ->,thick] (7.5,4.5) -- +(-60:1);
-
-\draw[black] (4.5,4.5) node {Opaque};
-\draw[black] (4.5,4.5)++(-30:1.8) node[left] {Photosphere};
-\draw[black,->] (4.5,4.5)++(-30:1.8) -- +(-30:0.2); 
-\draw[black,opacity=0.7] (4.5,2.0) node {Translucent};
-
-\draw[gray,thick] (1,0.55) -- +(7,0);
-\draw[gray,thick] (4.5,0.1) -- +(0,0.9);
-\draw[white,thick] (1.0,0.1) -- +(7,0.9);
-\draw[gray] (4.6,0.80) node [right,font=\tiny] {Velocity +};
-\draw[gray] (4.4,0.20) node [left,font=\tiny] {Velocity -};
-
-
-\draw [green,decorate,decoration={brace,amplitude=10pt}] (4.4,6.5) -- (4.4,7.5);
-\draw [green] (4.0,7.0) node [left] {P Cygni};
-\draw [green,decorate,decoration={brace,amplitude=10pt}] (4.5,4.5)++(20:2) -- +(20:1);
-\draw [green] (4.5,4.5)++(35:2.5) node {PVF};
+%\begin{tikzpicture}
+%\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
+%
+%\fill[cyan] (4.5,5.0) circle (3);
+%\fill[magenta] (4.5,5.0) circle (2.5);
+%\fill[white] (4.5,5.0) circle (1.5);
+%\draw[yellow, snake it, ->,thick] (6.0,5.0) -- +(4,0);
+%\draw[yellow, snake it, ->,thick] (4.5,6.5) -- +(0,2.5);
+%\draw[yellow,opacity=0.75, snake it, ->,thick] (4.5,7.0) -- +(4,0);
+%\draw[yellow,opacity=0.75, snake it, ->,thick] (6.25,5.0) -- +(60:1);
+%\draw[yellow,opacity=0.75, snake it, ->,thick] (6.25,5.0) -- +(-60:1);
+%\draw[yellow,opacity=0.75, snake it, ->,thick] (6.75,5.0) -- +(60:1);
+%\draw[yellow,opacity=0.75, snake it, ->,thick] (7.0,5.0) -- +(-60:1);
+%
+%\draw[black] (4.5,5.0) node {Opaque};
+%\draw[black] (4.5,5.0)++(-30:1.3) node[left] {Photosphere};
+%\draw[black,->] (4.5,5.0)++(-30:1.3) -- +(-30:0.2); 
+%\draw[black,opacity=0.7] (4.5,3.25) node {Translucent};
+%
+%\draw[gray,thick] (1.5,0.80) -- +(6,0);
+%\draw[gray,thick] (4.5,0.35) -- +(0,0.9);
+%\draw[white,thick] (1.5,0.45) -- +(6,0.8);
+%\draw[gray] (4.6,1.05) node [right,font=\tiny] {Velocity +};
+%\draw[gray] (4.4,0.45) node [left,font=\tiny] {Velocity -};
+%
+%
+%\draw [green,decorate,decoration={brace,amplitude=10pt}] (4.4,6.5) -- (4.4,7.5);
+%\draw [green] (4.0,7.0) node [left] {P Cygni};
+%\draw [green,decorate,decoration={brace,amplitude=10pt}] (4.5,5.0)++(20:1.5) -- +(20:1);
+%\draw [green] (4.5,5.0)++(35:2.0) node {PVF};
 %\draw [green] (7.0,5.75) node {PVF};
 
-\fill[white] (11,2) rectangle +(4.5,5);
-\draw[gray,dashed] (11.1,4.5) -- +(4.3,0);
-\draw[black,thick] (11.1,4.5) -- +(1,0.0) .. controls +(1,-2.0) .. +(3.5,0) .. controls +(0.45,1.5) .. +(4.3,0);
-\draw[black] (13.15,2.4) node {PVF};
-\draw[black] (14.75,6.2) node {P Cygni};
-\end{tikzpicture}
-}
+%\fill[white] (11,2) rectangle +(4.5,5);
+%\draw[gray,dashed] (11.1,4.5) -- +(4.3,0);
+%\draw[black,thick] (11.1,4.5) -- +(1,0.0) .. controls +(1,-2.0) .. +(3.5,0) .. controls +(0.45,1.5) .. +(4.3,0);
+%\draw[black] (13.15,2.4) node {PVF};
+%\draw[black] (14.75,6.2) node {P Cygni};
+%\end{tikzpicture}
+%}
 
-\frame{
-\frametitle{Cause of HVF}
+%\frame{
+%\frametitle{Cause of HVF}
 %\begin{center}
-\begin{tikzpicture}
-\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\fill[magenta] (4.5,4.5) circle (4);
-\fill[cyan] (4.5,4.5) circle (3.5);
-\fill[magenta] (4.5,4.5) circle (3);
-\fill[white] (4.5,4.5) circle (2);
-\draw[yellow, snake it, ->,thick] (6.5,4.5) -- +(4,0);
-\draw[yellow, snake it, ->,thick] (4.5,6.5) -- +(0,2.5);
-\draw[yellow,opacity=0.75, snake it, ->,thick] (4.5,7.0) -- +(4,0);
-\draw[yellow,opacity=0.75, snake it, ->,thick] (4.5,8.25) -- +(4,0);
-\draw[yellow,opacity=0.75, snake it, ->,thick] (6.75,4.5) -- +(60:1);
-\draw[yellow,opacity=0.75, snake it, ->,thick] (7.0,4.5) -- +(-60:1);
-\draw[yellow,opacity=0.75, snake it, ->,thick] (7.25,4.5) -- +(60:1);
-\draw[yellow,opacity=0.75, snake it, ->,thick] (7.5,4.5) -- +(-60:1);
-\draw[yellow,opacity=0.75, snake it, ->,thick] (8.25,4.5) -- +(-60:1);
-
-\draw[black] (4.5,4.5) node {Opaque};
-\draw[black] (4.5,4.5)++(-30:1.8) node[left] {Photosphere};
-\draw[black,->] (4.5,4.5)++(-30:1.8) -- +(-30:0.2); 
-\draw[black,opacity=0.7] (4.5,2.0) node {Translucent};
-
-
-\draw [green,decorate,decoration={brace,amplitude=7pt}] (4.4,6.5) -- (4.4,7.5);
-\draw [green] (4.0,7.0) node [left] {P Cygni};
-\draw [green,decorate,decoration={brace,amplitude=7pt}] (4.5,4.5)++(20:2) -- +(20:1);
-\draw [green] (4.5,4.5)++(35:2.5) node {PVF};
-\draw [green,decorate,decoration={brace,amplitude=5pt}] (4.5,4.5)++(5:3.5) -- +(5:0.5);
-\draw [green] (4.5,4.5)++(12.5:3.5) node[right] {HVF};
-
-\draw[gray,thick] (0.5,0.55) -- +(8,0);
-\draw[gray,thick] (4.5,0.1) -- +(0,0.9);
-\draw[white,thick] (0.5,0.1) -- +(8,0.9);
-\draw[gray] (4.6,0.80) node [right,font=\tiny] {Velocity +};
-\draw[gray] (4.4,0.20) node [left,font=\tiny] {Velocity -};
-
-\fill[white] (11,2) rectangle +(4.5,5);
-\draw[gray,dashed] (11.1,4.5) -- +(4.3,0);
-\draw[black,thick] (11.1,4.5) ..controls +(0.5,-2.0) .. +(1,-0.5) .. controls +(1,-2.0) .. +(3.5,0) .. controls +(0.45,1.5) .. +(4.3,0);
-\draw[black] (11.50,2.4) node {HVF};
-\draw[black] (13.15,3.2) node {PVF};
-\draw[black] (14.75,6.2) node {P Cygni};
-\end{tikzpicture}
-}
+%\begin{tikzpicture}
+%\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
+%\fill[magenta] (4.5,5.0) circle (3.5);
+%\fill[cyan] (4.5,5.0) circle (3);
+%\fill[magenta] (4.5,5.0) circle (2.5);
+%\fill[white] (4.5,5.0) circle (1.5);
+%\draw[yellow, snake it, ->,thick] (6.0,5.0) -- +(4,0);
+%\draw[yellow, snake it, ->,thick] (4.5,6.5) -- +(0,2.5);
+%\draw[yellow,opacity=0.75, snake it, ->,thick] (4.5,7.0) -- +(4,0);
+%\draw[yellow,opacity=0.75, snake it, ->,thick] (6.25,5.0) -- +(60:1);
+%\draw[yellow,opacity=0.75, snake it, ->,thick] (6.25,5.0) -- +(-60:1);
+%\draw[yellow,opacity=0.75, snake it, ->,thick] (6.75,5.0) -- +(60:1);
+%\draw[yellow,opacity=0.75, snake it, ->,thick] (7.0,5.0) -- +(-60:1);
+%
+%\draw[black] (4.5,5.0) node {Opaque};
+%\draw[black] (4.5,5.0)++(-30:1.3) node[left] {Photosphere};
+%\draw[black,->] (4.5,5.0)++(-30:1.3) -- +(-30:0.2); 
+%\draw[black,opacity=0.7] (4.5,3.25) node {Translucent};
+%
+%\draw[yellow,opacity=0.75, snake it, ->,thick] (4.5,8.25) -- +(4,0);
+%\draw[yellow,opacity=0.75, snake it, ->,thick] (7.75,5.0) -- +(-60:1);
+%
+%\draw [green,decorate,decoration={brace,amplitude=10pt}] (4.4,6.5) -- (4.4,7.5);
+%\draw [green] (4.0,7.0) node [left] {P Cygni};
+%\draw [green,decorate,decoration={brace,amplitude=10pt}] (4.5,5.0)++(20:1.5) -- +(20:1);
+%\draw [green] (4.5,5.0)++(35:2.0) node {PVF};
+%\draw [green,decorate,decoration={brace,amplitude=5pt}] (4.5,5.0)++(5:3.0) -- +(5:0.5);
+%\draw [green] (4.5,5.0)++(12.5:3.0) node[right] {HVF};
+%
+%\draw[gray,thick] (1.0,0.80) -- +(7.0,0);
+%\draw[gray,thick] (4.5,0.35) -- +(0,0.9);
+%\draw[white,thick] (1.0,0.35) -- +(7.0,0.9);
+%\draw[gray] (4.6,1.05) node [right,font=\tiny] {Velocity +};
+%\draw[gray] (4.4,0.45) node [left,font=\tiny] {Velocity -};
+%
+%\fill[white] (11,2) rectangle +(4.5,5);
+%\draw[gray,dashed] (11.1,4.5) -- +(4.3,0);
+%\draw[black,thick] (11.1,4.5) ..controls +(0.5,-2.0) .. +(1,-0.5) .. controls +(1,-2.0) .. +(3.5,0) .. controls +(0.45,1.5) .. +(4.3,0);
+%\draw[black] (11.50,2.4) node {HVF};
+%\draw[black] (13.15,3.2) node {PVF};
+%\draw[black] (14.75,6.2) node {P Cygni};
+%\end{tikzpicture}
+%}
 
 \frame{
 \frametitle{Source of HVF}
+\begin{footnotesize}
 \begin{tabular}{l}
-High velocity material ejected from SN\\
+Clumps of high velocity material ejected from SN\\
 \\
 \\
 \\
@@ -598,13 +641,18 @@ Material swept up as SN expands\\
 \\
 \\
 \\
+Outer layer of ejecta with different ionization or excitation characteristics\\
+\\
+\\
 Shell of material surrounding SN prior to explosion\\
 \\
 \end{tabular}
+\end{footnotesize}
 }
 
 \frame{
 \frametitle{Source of HVF}
+\begin{footnotesize}
 \begin{tabular}{l}
 Clumps of high velocity material ejected from SN\\
 \color{magenta}\hspace{2em} Explains polarization\\
@@ -615,30 +663,61 @@ Material swept up as SN expands\\
 \\
 \\
 \\
+Outer layer of ejecta with different ionization or excitation characteristics\\
+\\
+\\
 Shell of material surrounding SN prior to explosion\\
 \\
 \end{tabular}
+\end{footnotesize}
 }
 
 \frame{
 \frametitle{Source of HVF}
+\begin{footnotesize}
 \begin{tabular}{l}
 Clumps of high velocity material ejected from SN\\
 \color{magenta}\hspace{2em} Explains polarization\\
-\color{magenta}\hspace{2em} May be greatly enhanced in freshly synthesized elements\\
+\color{magenta}\hspace{2em} Likely be greatly enhanced in freshly synthesized elements\\
 \color{magenta}\hspace{2em} No obvious explanation for velocity evolution\\
 \sout{Material swept up as SN expands}\\
 \color{magenta}\hspace{2em} Polarization due to instabilities during interaction\\
 \color{magenta}\hspace{2em} Related to wind from progenitor?\\
-\color{magenta}\hspace{2em} Outer edge slows as material is swept up\\
 \color{magenta}\hspace{2em} Would likely result in added blue light and synchrotron emission\\
+\color{magenta}\hspace{2em} Outer edge slows as material is swept up\\
+Outer layer of ejecta with different ionization or excitation characteristics\\
+\\
+\\
 Shell of material surrounding SN prior to explosion\\
 \end{tabular}
+\end{footnotesize}
+}
+
+\frame{
+\frametitle{Source of HVF}
+\begin{footnotesize}
+\begin{tabular}{l}
+Clumps of high velocity material ejected from SN\\
+\color{magenta}\hspace{2em} Explains polarization\\
+\color{magenta}\hspace{2em} Likely be greatly enhanced in freshly synthesized elements\\
+\color{magenta}\hspace{2em} No obvious explanation for velocity evolution\\
+\sout{Material swept up as SN expands}\\
+\color{magenta}\hspace{2em} Polarization due to instabilities during interaction\\
+\color{magenta}\hspace{2em} Related to wind from progenitor?\\
+\color{magenta}\hspace{2em} Would likely result in added blue light and synchrotron emission\\
+\color{magenta}\hspace{2em} Outer edge slows as material is swept up\\
+Outer layer of ejecta with different ionization or excitation characteristics\\
+\color{magenta}\hspace{2em} Some theoretical evidence this may occur (Blondin et al. 2013)\\
+\color{magenta}\hspace{2em} May not explain evolution or polarization\\
+Shell of material surrounding SN prior to explosion\\
+\end{tabular}
+\end{footnotesize}
 }
 
 
 \frame{
 \frametitle{Source of HVF}
+\begin{footnotesize}
 \begin{tabular}{l}
 Clumps of high velocity material ejected from SN\\
 \color{magenta}\hspace{2em} Explains polarization\\
@@ -649,16 +728,20 @@ Clumps of high velocity material ejected from SN\\
 \color{magenta}\hspace{2em} Related to wind from progenitor?\\
 \color{magenta}\hspace{2em} Would likely result in added blue light and synchrotron emission\\
 \color{magenta}\hspace{2em} Outer edge slows as material is swept up\\
+Outer layer of ejecta with different ionization or excitation characteristics\\
+\color{magenta}\hspace{2em} Some theoretical evidence this may occur (Blondin et al. 2013)\\
+\color{magenta}\hspace{2em} May not explain evolution or polarization\\
 Shell of material surrounding SN prior to explosion\\
-\color{magenta}\hspace{2em} Explains polarization\\
-\color{magenta}\hspace{2em} Compact: no ongoing emission due to interaction\\
-\color{magenta}\hspace{2em} Ca content may be sub-Solar -- super-Solar\\
 \color{magenta}\hspace{2em} Material from donor: evidence of H, He, C / O?\\
 \color{magenta}\hspace{2em} He shell relating to deonation?\\ 
 \color{magenta}\hspace{4em} Woosley et al. (1980), Nomoto (1982)\\
 \color{magenta}\hspace{4.5em} c.f. Shen \& Moore (2014) \& references therein \\
+\color{magenta}\hspace{2em} Polarization due to instabilities during interaction\\
+\color{magenta}\hspace{2em} Compact: no ongoing interaction --- no excess emission\\
+\color{magenta}\hspace{2em} Ca content may be sub-Solar -- super-Solar\\
 \color{magenta}\hspace{2em} Velocity evolution through expansion\\
 \end{tabular}
+\end{footnotesize}
 }
 
 \setbeamertemplate{footline}{\insertsectionhead~\insertpagenumber / 5}
@@ -703,7 +786,7 @@ Shell of material surrounding SN prior to explosion\\
 \draw[red] (8.0,5) node {(HVF)};
 \draw[red,<-] (6.2,7.75)--(6.5,7.75) node[right] {Density enhancement};
 \draw[red] (6.7,7.25) node[right] {(contact discontinuity)};
-\fill[white] (3.1,1.0) rectangle +(0.86,8);
+\fill[white] (3.1,1.0) rectangle +(0.86,7.7);
 \draw[black] (3.5,5) node[rotate=90] {Normalized density};
 \end{tikzpicture}
 }
@@ -712,13 +795,16 @@ Shell of material surrounding SN prior to explosion\\
 \frametitle{Synthetic spectra using \textsc{syn++}}
 \begin{tikzpicture}
 \draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\tkzpicmyps{3.1}{1.0}{10.0}{MW18a_Fig_4c}
+\draw[white] (5.0,8.75) node {\textsc{syn++} (Thomas et al. 2011)};
+\draw[white] (5.0,7.75) node[right] {Allows selection and control of individual ions};
+\draw[white] (5.0,8.25) node[right] {specify $T_{\mathrm{PS}}$, $v_{\mathrm{PS}}$, $T_{\mathrm{exc}}$};
+\tkzpicmyps{3.1}{1.0}{8.0}{MW18a_Fig_4c}
 \draw[white] (8.0,0.5) node {Mulligan \& Wheeler 2018};
 \end{tikzpicture}
 }
 
 \frame{
-\frametitle{Fitting SN~201fe using \textsc{syn++} (0.005\Msun shell)}
+\frametitle{Fitting SN~2011fe using \textsc{syn++} (0.005\Msun shell)}
 \begin{tikzpicture}
 \draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
 \begin{scope}[even odd rule]
@@ -770,18 +856,18 @@ Shell of material surrounding SN prior to explosion\\
 \end{tikzpicture}
 }
 
-\frame{
-\frametitle{Fitting SN~201fe using \textsc{syn++}: $T_{\mathrm{eff}}$, $v_{\mathrm{ps}}$, Ca \textsc{II} optical depth }
-\begin{tikzpicture}
-\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\tkzpicmyps{0.5}{3.0}{5}{MW2_Fig_1}
-\tkzpicmyps{5.5}{3.0}{5}{MW2_Fig_2}
-\tkzpicmyps{10.5}{3.0}{5}{MW2_Fig_3}
-\fill[white] (10.5,3.0) rectangle +(0.5,5*8.5/11);
-\draw[black] (10.75,3+5*8.5/11*0.5) node[rotate=90,font=\tiny] {log Optical Depth};
-\draw[white] (8,1.0) node {Mulligan \& Wheeler 2018};
-\end{tikzpicture}
-}
+%\frame{
+%\frametitle{Fitting SN~201fe using \textsc{syn++}: $T_{\mathrm{eff}}$, $v_{\mathrm{ps}}$, Ca \textsc{II} optical depth }
+%\begin{tikzpicture}
+%\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
+%\tkzpicmyps{0.5}{3.0}{5}{MW2_Fig_1}
+%\tkzpicmyps{5.5}{3.0}{5}{MW2_Fig_2}
+%\tkzpicmyps{10.5}{3.0}{5}{MW2_Fig_3}
+%\fill[white] (10.5,3.0) rectangle +(0.5,5*8.5/11);
+%\draw[black] (10.75,3+5*8.5/11*0.5) node[rotate=90,font=\tiny] {log Optical Depth};
+%\draw[white] (8,1.0) node {Mulligan \& Wheeler 2018};
+%\end{tikzpicture}
+%}
 
 \setbeamertemplate{footline}{\insertsectionhead~\insertpagenumber / 7}
 
@@ -802,6 +888,24 @@ Shell of material surrounding SN prior to explosion\\
 \end{tikzpicture}
 }
 
+
+\frame{
+\frametitle{Shen \& Moore (2014) envelopes}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
+\tkzpicmyps{0.5}{3.0}{5}{d02_Seit+0p0_Shen-XpXXX}
+\tkzpicmyps{5.5}{3.0}{5}{d05_Seit+0p0_Shen-XpXXX}
+\tkzpicmyps{10.5}{3.0}{5}{d09_Seit+0p0_Shen-XpXXX}
+\draw[white] (3.0,2.75) node {2~d};
+\draw[white] (8.0,2.75) node {5~d};
+\draw[white] (13.0,2.75) node {9~d};
+\draw[white] (8,2.0) node {Selected envelopes do very poor job at 2 \& 5~d};
+\draw[white] (8,1.5) node {Tighly constrained envelope near 0.008\Msun may generate accurate spectrum};
+\draw[white] (8,1.0) node {No explanation why mass would be 0.008\Msun };
+\draw[white] (8,0.5) node {Mulligan, Zhang, \& Wheeler (in prep.)};
+\end{tikzpicture}
+}
+
 \frame{
 \frametitle{Effect of the substrate? }
 \begin{tikzpicture}
@@ -810,21 +914,6 @@ Shell of material surrounding SN prior to explosion\\
 \tkzpicmyps{5.5}{3.0}{5}{d02_Seit+0p0_He-Solar+XpX}
 \tkzpicmyps{10.5}{3.0}{5}{d02_Seit+0p0_CO-Solar+XpX}
 \draw[white] (8,2.0) node {Substrate does not appear in the spectrum};
-\draw[white] (8,0.5) node {Mulligan, Zhang, \& Wheeler (in prep.)};
-\end{tikzpicture}
-}
-
-\frame{
-\frametitle{Calcium yield in the supernova}
-\begin{tikzpicture}
-\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\tkzpicmyps{0.5}{3.0}{5}{d02_Seit+XpX_H-Solar+0p0_CaNIR}
-\tkzpicmyps{5.5}{3.0}{5}{d05_Seit+XpX_H-Solar+0p0_CaNIR}
-\tkzpicmyps{10.5}{3.0}{5}{d09_Seit+XpX_H-Solar+0p0_CaNIR}
-\draw[white] (3.0,2.75) node {2~d};
-\draw[white] (8.0,2.75) node {5~d};
-\draw[white] (13.0,2.75) node {9~d};
-\draw[white] (8,2.0) node {Vary Ca yield relative to Seitenzahl (2013) N100 by -5 -- 0~dex};
 \draw[white] (8,0.5) node {Mulligan, Zhang, \& Wheeler (in prep.)};
 \end{tikzpicture}
 }
@@ -844,22 +933,22 @@ Shell of material surrounding SN prior to explosion\\
 \end{tikzpicture}
 }
 
+
 \frame{
-\frametitle{Shen \& Moore (2014) envelopes}
+\frametitle{Calcium yield in the supernova}
 \begin{tikzpicture}
 \draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
-\tkzpicmyps{0.5}{3.0}{5}{d02_Seit+0p0_Shen-XpXXX}
-\tkzpicmyps{5.5}{3.0}{5}{d05_Seit+0p0_Shen-XpXXX}
-\tkzpicmyps{10.5}{3.0}{5}{d09_Seit+0p0_Shen-XpXXX}
+\tkzpicmyps{0.5}{3.0}{5}{d02_Seit+XpX_H-Solar+0p0_CaNIR}
+\tkzpicmyps{5.5}{3.0}{5}{d05_Seit+XpX_H-Solar+0p0_CaNIR}
+\tkzpicmyps{10.5}{3.0}{5}{d09_Seit+XpX_H-Solar+0p0_CaNIR}
 \draw[white] (3.0,2.75) node {2~d};
 \draw[white] (8.0,2.75) node {5~d};
 \draw[white] (13.0,2.75) node {9~d};
-\draw[white] (8,2.0) node {Selected envelopes do very poor job at 2,5~d};
-\draw[white] (8,1.5) node {Tighly constrained envelope near 0.008\Msun may generate accurate spectrum};
-\draw[white] (8,1.0) node {No explanation why mass would be 0.008\Msun };
+\draw[white] (8,2.0) node {Vary Ca yield relative to Seitenzahl (2013) N100 by -5 -- 0~dex};
 \draw[white] (8,0.5) node {Mulligan, Zhang, \& Wheeler (in prep.)};
 \end{tikzpicture}
 }
+
 
 \frame{
 \frametitle{``Best'' fit}
@@ -880,56 +969,78 @@ Shell of material surrounding SN prior to explosion\\
 
 \frame{
 \frametitle{Findings \& Implications}
+\begin{footnotesize}
 \begin{tabular}{l}
-Solar -- super-Solar abundance of Ca\\
+\color{white}Solar -- super-Solar abundance of calcium\\
 \hspace{2em} Where does so much calcium come from?\\
-\hspace{2em} Why are HVF so common
-Shell model does OK job of generating HVF\\
-\hspace{2em} Velocity at 5+ days better explained by shell with mass 0.005\Msun\\
-\hspace{2em} HVF insufficiently distinct -- too much Ca in ejecta at high velocity?\\
-Silicon HVF?
-\hspace{2em} We did not see any Si HVF\\
-\hspace{2em} Also need super-Solar Si content to get HVF.
+\hspace{4em} Is \textsc{tardis} getting the ion populations right?\\
+\hspace{2em} Why are HVF so common?\\
+\hspace{4em} If SN~Ia come from old populations, expect sub-solar calcium.\\
+\color{white}Shell model does OK job of generating HVF\\
+\hspace{2em} Velocity of HVF at 5+ days better explained by shell with mass 0.005\Msunp.\\
+\hspace{2em} HVF insufficiently distinct.\\
+\hspace{4em} Too much Ca in ejecta at high velocity?\\
+\hspace{2em} Shallow HVF, too blue\\
+\hspace{4em} Gradient in calcium abundance in the shell?\\
+\color{white}Silicon or other HVF?\\
+\hspace{2em} No HVF besides calcium.\\
+\hspace{2em} Suggests need for super-Solar content to get HVF.\\
+\color{white}Substrate does not appear in spectra\\
+\hspace{2em} Will it be ever be visible?\\
+\color{white} Shen \& Moore (2013) envelopes do not produce spectra that look anything like observed SN~Ia.\\
+\hspace{2em} 0.008\Msun envelope?
 \end{tabular}
+\end{footnotesize}
 }
 
-\setbeamertemplate{footline}{\insertsectionhead~\insertpagenumber / 2}
+\setbeamertemplate{footline}{\insertsectionhead~\insertpagenumber / 3}
 
 \section{Outstanding questions \& summary}
 \setcounter{page}{1}
 \frame{
 \frametitle{Questions}
 \begin{tabular}{l}
-What is the substrate?\\
-\hspace{2em} Had been hoping to put upper limit, but it doesn't show up at expected abundances\\
-Will a gradient in the shell abundance help improve HVF?\\
-Why does the Ca content need to be increased with time?\\
+\color{white}Why does the Ca content need to increase with time?\\
+\hspace{2em} Artificial way of cranking up Ca \textsc{II} abundance.\\
 \hspace{2em} Physics missing in \textsc{tardis}?\\
 \hspace{2em} Evidence of sweeping up material instead of expanding shell?\\
 \hspace{4em} If so, why is there no light signature?\\
-Is the 0.008\Msun Shen \& Moore (2013) type helium envevlope physically motivated?\\
+\color{white}Is the 0.008\Msun Shen \& Moore (2013) type helium envelope physically motivated?\\
 \hspace{2em} There is no known reason why one mass of envelope is preferred over any other.\\
-What is the light signature of the shell during shock breakout?\\
+\color{white}What is the light signature of the shell during shock breakout?\\
 \hspace{2em} How long is it visible?\\
 \end{tabular}
 }
 
 \frame{
+\frametitle{Next}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (15.8,9);
+\draw[white] (8,4.5) node[font=\Huge] {?};
+\draw[white] (8,3.0) node {University level teaching};
+\end{tikzpicture}
+}
+
+\frame{
 \frametitle{Summary}
 \begin{tabular}{l}
-HVF in SN~Ia\\
+\color{white}HVF in SN~Ia\\
 \hspace{2em} $\sim$30,000 (1~d) -- $\sim$20,000\kms (peak brightness)\\
-\hspace{2em} Polarized --- clumpy\\
-\hspace{2em} Disappear around the time of peak brightness\\
-\hspace{2em} Distinct from PVF\\
-Interaction between SN \& compact, circumstellar shell\\
-\hspace{2em} Interaction done in seconds\\
-\hspace{2em} Shell velocity $\sim$20,000\kms -- 100,000\kms\\
-\hspace{2em} Mass $\sim$0.01\Msun\\
-\hspace{2em} Requires Solar+ calcium abundance\\
-%\hspace{2em} 
+\hspace{2em} Polarized = clumpy.\\
+\hspace{2em} Disappear around the time of peak brightness.\\
+\hspace{2em} Distinct from PVF.\\
+\color{white}Interaction between SN \& compact, circumstellar shell:\\
+\hspace{2em} Interaction done in seconds -- no excess radiation at epochs when SNe are observed.\\
+\hspace{2em} Velocity of contact discontinuity $\sim$15 -- 25,000\kmsp.\\
+\hspace{2em} Maximum velocity of shell $\sim$ 100,000\kmsp.
+\hspace{2em} Mass of $\sim$0.01\Msun; 0.005\Msun explains velocity of HVF at $>$ 1 week after explosion.
+\hspace{2em} Requires Solar -- super-Solar calcium abundance.\\
+\hspace{2em} Requires super-Solar silicon abundance?\\
+\hspace{2em} Substrate unclear -- won't show up in spectra.\\
+\hspace{2em} If shell is associated with helium envelope \& detonation, needs to be $\sim$0.008\Msunp.\\
 \end{tabular}
 }
+
 
 \section*{bibliography}
 
