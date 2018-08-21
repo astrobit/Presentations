@@ -1,0 +1,86 @@
+\documentclass[aspectratio=1610,slidestop]{beamer}
+\usepackage{graphicx}
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+\usepackage{datetime}
+\usepackage{multirow}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage[outline]{contour}
+
+\newdate{date}{18}{6}{2018}
+\date{\displaydate{date}}
+
+\usetikzlibrary{calc}
+\usecolortheme{albatross}
+\setbeamertemplate{background canvas} {% 
+\begin{tikzpicture} 
+    \shade [left color=blue!80!black,right color=blue!20!black] 
+        (0,0) rectangle (\paperwidth,\paperheight); 
+\end{tikzpicture} 
+} 
+
+\newcommand{\tkzpicmyps}[4]{\fill [fill=white](#1,#2) rectangle +(#3,#3*0.772727273) [path picture=
+	{
+		\node at (path picture bounding box.center) 
+		{
+			\includegraphics[height=#3cm,angle=-90]{#4}
+		};
+	}
+];
+}
+
+\newcommand{\tkzpic}[5]{\fill [fill=white](#1,#2) rectangle +(#3,#4) [path picture=
+	{
+		\node at (path picture bounding box.center) 
+		{
+			\includegraphics[width=#3cm]{#5}
+		};
+	}
+];
+}
+\newcommand{\tkzpich}[5]{\fill [fill=white](#1,#2) rectangle +(#3,#4) [path picture=
+	{
+		\node at (path picture bounding box.center) 
+		{
+			\includegraphics[height=#4cm]{#5}
+		};
+	}
+];
+}
+\newcommand{\tkzpicwh}[5]{\fill [fill=white](#1,#2) rectangle +(#3,#4) [path picture=
+	{
+		\node at (path picture bounding box.center) 
+		{
+			\includegraphics[width=#3cm,height=#4cm]{#5}
+		};
+	}
+];
+}
+\newcommand{\Msunp}{\;$\mathrm{M}_\odot$}
+\newcommand{\Msun}{\;$\mathrm{M}_\odot$\;}
+\newcommand{\Lsunp}{\;$\mathrm{L}_\odot$}
+\newcommand{\Lsun}{\;$\mathrm{L}_\odot$\;}
+\newcommand{\kms}{\;$\mathrm{km}\;\mathrm{s}^{-1}$\;}
+\newcommand{\kmsp}{\;$\mathrm{km}\;\mathrm{s}^{-1}$}
+
+%\usecolortheme[rgb={1.0,1.0,1.0}]{normal text}
+\setbeamersize{text margin left=0.1cm,text margin right=0.1cm}
+\tikzstyle{dashed}=                  [dash pattern=on 6pt off 6pt]
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.pathreplacing}
+
+\tikzset{snake it/.style={decorate, decoration=snake}}
+%\usepackage{tikz-feynman}
+
+\title{Exploding Stars, the Universe, and You}
+%\subtitle{Ph.D. Defense}
+\author{Dr. Brian W. Mulligan}
+\institute{The University of Texas at Austin}
+
+\begin{document}
+\input{ede}
+\end{document}

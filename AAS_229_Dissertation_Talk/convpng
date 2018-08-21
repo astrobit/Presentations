@@ -1,0 +1,6 @@
+#!/bin/bash
+FILES=`ls *.eps`
+for II in $FILES; do
+	FILPNG=${II/eps/png}
+	gs -dSAFER -dBATCH -dNOPAUSE -r600 -sDEVICE=png16m -sOutputFile=$FILPNG $II
+done

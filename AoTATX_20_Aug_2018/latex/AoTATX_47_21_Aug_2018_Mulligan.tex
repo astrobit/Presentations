@@ -1,0 +1,706 @@
+\documentclass[slidestop]{beamer}
+\usepackage{graphicx}
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+\usepackage{datetime}
+\usepackage{multirow}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage[outline]{contour}
+
+\newdate{date}{21}{8}{2018}
+\date{\displaydate{date}}
+
+\usetikzlibrary{calc}
+\usecolortheme{albatross}
+\setbeamertemplate{background canvas} {% 
+\begin{tikzpicture} 
+    \shade [left color=blue!80!black,right color=blue!20!black] 
+        (0,0) rectangle (\paperwidth,\paperheight); 
+\end{tikzpicture} 
+} 
+
+\newcommand{\tkzpicmyps}[4]{\fill [fill=white](#1,#2) rectangle +(#3,#3*0.772727273) [path picture=
+	{
+		\node at (path picture bounding box.center) 
+		{
+			\includegraphics[height=#3cm,angle=-90]{#4}
+		};
+	}
+];
+}
+
+\newcommand{\tkzpic}[5]{\fill [fill=white](#1,#2) rectangle +(#3,#4) [path picture=
+	{
+		\node at (path picture bounding box.center) 
+		{
+			\includegraphics[width=#3cm]{#5}
+		};
+	}
+];
+}
+\newcommand{\tkzpich}[5]{\fill [fill=white](#1,#2) rectangle +(#3,#4) [path picture=
+	{
+		\node at (path picture bounding box.center) 
+		{
+			\includegraphics[height=#4cm]{#5}
+		};
+	}
+];
+}
+\newcommand{\tkzpicwh}[5]{\fill [fill=white](#1,#2) rectangle +(#3,#4) [path picture=
+	{
+		\node at (path picture bounding box.center) 
+		{
+			\includegraphics[width=#3cm,height=#4cm]{#5}
+		};
+	}
+];
+}
+\newcommand{\Msunp}{\;$\mathrm{M}_\odot$}
+\newcommand{\Msun}{\;$\mathrm{M}_\odot$\;}
+\newcommand{\Lsunp}{\;$\mathrm{L}_\odot$}
+\newcommand{\Lsun}{\;$\mathrm{L}_\odot$\;}
+\newcommand{\kms}{\;$\mathrm{km}\;\mathrm{s}^{-1}$\;}
+\newcommand{\kmsp}{\;$\mathrm{km}\;\mathrm{s}^{-1}$}
+
+%\usecolortheme[rgb={1.0,1.0,1.0}]{normal text}
+\setbeamersize{text margin left=0.1cm,text margin right=0.1cm}
+\tikzstyle{dashed}=                  [dash pattern=on 6pt off 6pt]
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.pathreplacing}
+
+\tikzset{snake it/.style={decorate, decoration=snake}}
+%\usepackage{tikz-feynman}
+
+\title{Exploding Stars, the Universe, and You}
+\author{Dr. Brian W. Mulligan}
+\institute{The University of Texas at Austin}
+
+\begin{document}
+\frame{
+\maketitle
+\begin{center} AoTATX \# 47 \end{center}
+}
+
+\frame{\frametitle{Pre-summary}
+\begin{centering}
+\vspace{0.5cm}
+\input{summary}
+\end{centering}
+}
+
+%\frame{\frametitle{Outline}\tableofcontents}
+
+%\item Type Ia supernovae (SN~Ia)
+%\item High velocity features in SN~Ia
+%\item The compact circumstellar shell model \& interaction
+%\item Synthetic spectra \& comparison to observations
+%\end{itemize}
+%}
+%\setbeamertemplate{footline}{\insertsectionhead~\insertpagenumber / 10}
+
+\frame{\frametitle{Three stars: a story : {\color{red} Just formed}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\fill[white!12!blue] (10,6) circle (1.94);
+\draw[white!50!black] (10,8.44) node {$>$ 8$\times$ Sun};
+\draw[yellow] (10,2.75) node {H $\rightarrow$ He};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{An Open Cluster (NGC 6397)}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+\tkzpic{0.9}{0.75}{11}{8.25}{Pictures/hubbleimage1stscihp1824am2000x1500};
+\draw[yellow] (6.4,0.85) node[font=\tiny] {Credits: NASA, ESA, and T. Brown and S. Casertano (STScI); Acknowledgement: NASA, ESA, and J. Anderson (STScI)};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 1 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+
+\fill[white!12!blue] (10,6) circle (1.94);
+\draw[white!50!black] (10,8.44) node {$>$ 8$\times$ Sun};
+\draw[yellow] (10,2.75) node {H $\rightarrow$ He};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 2 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+
+\fill[white!25!blue] (10,6) circle (2.0);
+\draw[white!50!black] (10,8.44) node {$>$ 8$\times$ Sun};
+\draw[yellow] (10,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (10,2.25) node {He $\rightarrow$ C,O};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 3 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\fill[black] (10,6) circle (0.000011905);
+
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 2 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\fill[white!25!blue] (10,6) circle (2.0);
+\draw[white!50!black] (10,8.44) node {$>$ 8$\times$ Sun};
+\draw[yellow] (10,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (10,2.25) node {He $\rightarrow$ C,O};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 2.5 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\draw[white!50!black] (10,8.44) node {$>$ 8$\times$ Sun};
+\draw[yellow] (10,3.25) node {\small H $\rightarrow$ He};
+\draw[yellow] (10,2.75) node {He $\rightarrow$ C,O};
+\draw[yellow] (10,2.25) node {C,O $\rightarrow$ Mg,Ne};
+\fill[white!35!blue] (10,6) circle (2.0);
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 2.55 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\fill[white] (10,6) circle (2.5);
+\draw[white!50!black] (10,8.44) node {$>$ 8$\times$ Sun};
+\draw[yellow] (10,3.75) node {H $\rightarrow$ He};
+\draw[yellow] (10,3.25) node {He $\rightarrow$ C,O};
+\draw[yellow] (10,2.75) node {C,O $\rightarrow$ Mg,Ne};
+\draw[yellow] (10,2.25) node {Mg,Ne $\rightarrow$ Si,S,Ca};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 2.56 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\fill[red] (10,6) circle (3.0);
+\draw[white!50!black] (10,8.44) node {$>$ 8$\times$ Sun};
+\draw[yellow] (10,4.25) node {H $\rightarrow$ He};
+\draw[yellow] (10,3.75) node {He $\rightarrow$ C,O};
+\draw[yellow] (10,3.25) node {C,O $\rightarrow$ Mg,Ne};
+\draw[yellow] (10,2.75) node {Mg,Ne $\rightarrow$ Si,S,Ca};
+\draw[yellow] (10,2.25) node {Si,S,Ca $\rightarrow$ Fe};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 2.561 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\fill[red] (10,6) circle (3.0);
+\draw[white!50!black] (10,8.44) node {$>$ 8$\times$ Sun};
+\draw[yellow] (10,3.25) node {He + Fe $\rightarrow$ Ni};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 2.561 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\fill[red] (10,6) circle (3.0);
+\draw[white!50!black] (10,8.44) node {$>$ 8$\times$ Sun};
+\foreach \x in {0,60,-60,120,-120,180}
+{
+	\draw[blue,thick,->] (10,6)++(\x:2.5) -- +(\x:-2.25);
+} 
+\draw[yellow] (10,3.25) node {He + Fe $\rightarrow$ Ni};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 2.561 Million Years Old + 1 second}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\fill[red] (10,6) circle (3.0);
+\draw[white!50!black] (10,8.44) node {$>$ 8$\times$ Sun};
+\fill[gray] (10,6) circle (0.1);
+\foreach \x in {0,60,-60,120,-120,180}
+{
+	\draw[blue,thick,->] (10,6)++(\x:2.5) -- +(\x:-2.25);
+} 
+\draw[yellow] (10,3.25) node {He + Fe $\rightarrow$ Ni};
+\draw[gray] (10,2.75) node {Neutron Star};
+\draw[yellow] (10,2.25) node {... $\rightarrow$ Heavy Elements};
+\end{tikzpicture}
+}
+
+
+\frame{\frametitle{Three stars: a story : {\color{red} 2.561 Million Years Old + 1.001 sec.}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\fill[red] (10,6) circle (3.0);
+\draw[white!50!black] (10,8.44) node {$>$ 8$\times$ Sun};
+\fill[gray] (10,6) circle (0.1);
+\foreach \x in {0,60,-60,120,-120,180}
+{
+	\draw[blue,thick,->] (10,6)++(\x:0.25) -- +(\x:2.5);
+} 
+\draw[yellow] (10,3.25) node {He + Fe $\rightarrow$ Ni};
+\draw[gray] (10,2.75) node {Neutron Star};
+\draw[yellow] (10,2.25) node {... $\rightarrow$ Heavy Elements};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 2.561 Million Years Old + 1.0011 sec.}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\fill[red] (10,6) circle (3.0);
+\foreach \x in {0,60,-60,120,-120,180}
+{
+	\draw[blue,thick,->] (10,6)++(\x:0.25) -- +(\x:2.5);
+} 
+\draw[white!50!black] (10,8.44) node {$>$ 8$\times$ Sun};
+\fill[gray] (10,6) circle (0.1);
+\fill[black] (10,6) circle (0.025);
+\draw[yellow] (10,3.25) node {He + Fe $\rightarrow$ Ni};
+\draw[gray] (10,2.75) node {Neutron Star};
+\draw[yellow] (10,2.25) node {... $\rightarrow$ Heavy Elements};
+\draw[black,thick] (7.75,2.75) node[left] {Black Hole};
+\draw[yellow] (7.75,2.25) node[left] {($>$ 25$\times$ Sun)};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{A supernova remnant: the Crab Neblua\\ {\small \color{red} about 1000 years after the explosion}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+\tkzpic{0.9}{0.2}{11}{8.25}{Pictures/STSCI-H-p1721a-m-2000x2000};
+\draw[yellow] (6.4,1.10) node[font=\tiny] {Credit: NASA, ESA, G. Dubner (IAFE, CONICET-University of Buenos Aires) et al.; A. Loll et al.; T. Temim et al.;}; 
+\draw[yellow] (6.4,0.85) node[font=\tiny] {F. Seward et al.; VLA/NRAO/AUI/NSF; Chandra/CXC; Spitzer/JPL-Caltech; XMM-Newton/ESA; and Hubble/STScI};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{A supernova remnant: the Crab Neblua\\ {\small \color{red} about 1000 years after the explosion}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+\tkzpic{0.9}{0.2}{11}{8.25}{Pictures/STSCI-H-p1721a-m-2000x2000};
+\draw[yellow] (2.5,7.95) -- (2.5,8.0) -- (10.3,8.0) -- (10.3,7.95);
+\draw[yellow] (6.4,8.25) node {11 light years};
+\draw[yellow!50!red] (6.4,4.325) -- (11.0,5) node[right] {Neutron};
+\draw[yellow!50!red] (11.0,4.5) node[right] {Star};
+\draw[yellow!50!red] (6.4,4.95) -- (11.0,5.625) node[right] {Hot gas};
+\draw[yellow!50!red] (6.4,6.95) -- (11.0,7.625) node[right] {Dust};
+
+\draw[yellow] (6.4,1.10) node[font=\tiny] {Credit: NASA, ESA, G. Dubner (IAFE, CONICET-University of Buenos Aires) et al.; A. Loll et al.; T. Temim et al.;}; 
+\draw[yellow] (6.4,0.85) node[font=\tiny] {F. Seward et al.; VLA/NRAO/AUI/NSF; Chandra/CXC; Spitzer/JPL-Caltech; XMM-Newton/ESA; and Hubble/STScI};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{A supernova remnant: the Veil Neblua\\ {\small \color{red} about 10000 years after the explosion}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+\tkzpic{0.9}{0.2}{11}{8.25}{Pictures/heic0712d-wallpaper};
+\draw[yellow] (2.5,7.95) -- (2.5,8.0) -- (10.3,8.0) -- (10.3,7.95);
+\draw[yellow] (6.4,8.25) node {50 light years};
+\draw[yellow!50!red] (8.4,6.95) -- (11.0,7.075) node[right] {Dust};
+\draw[yellow] (6.4,1.10) node[font=\tiny] {Credit: NASA, ESA, the Hubble Heritage (STScI/AURA)-ESA/Hubble Collaboration, and the Digitized Sky Survey 2}; 
+\draw[yellow] (6.4,0.85) node[font=\tiny] {Acknowledgment: J. Hester (Arizona State University) and Davide De Martin (ESA/Hubble)};
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 3 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\draw[white!50!black] (10,8.44) node {10$\times$ Sun Black Hole};
+\fill[black] (10,6) circle (0.05);
+
+\end{tikzpicture}
+}
+\frame{\frametitle{Three stars: a story : {\color{red} 5 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\draw[white!50!black] (10,8.44) node {10$\times$ Sun Black Hole};
+\fill[black] (10,6) circle (0.05);
+
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 50 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\draw[white!50!black] (10,8.44) node {10$\times$ Sun Black Hole};
+\fill[black] (10,6) circle (0.05);
+
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 100 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\draw[white!50!black] (10,8.44) node {10$\times$ Sun Black Hole};
+\fill[black] (10,6) circle (0.05);
+
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 500 Million Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\draw[white!50!black] (10,8.44) node {10$\times$ Sun Black Hole};
+\fill[black] (10,6) circle (0.05);
+
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 1 Billion Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[white] (3.5,6) circle (0.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+
+\draw[white!50!black] (10,8.44) node {10$\times$ Sun Black Hole};
+\fill[black] (10,6) circle (0.05);
+
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 1.5 Billion Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white] (1.5,6) circle (0.5);
+\fill[red] (3.5,6) circle (1.5);
+\draw[white!50!black] (1.5,7) node {1.9$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {2.1$\times$ Sun};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.75) node {H $\rightarrow$ He};
+\draw[yellow] (3.5,2.25) node {He $\rightarrow$ C,O};
+
+\draw[white!50!black] (10,8.44) node {10$\times$ Sun Black Hole};
+\fill[black] (10,6) circle (0.05);
+
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 1.75 Billion Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[white!80!blue] (1.5,6) circle (0.6);
+\fill[white] (3.5,6) circle (0.15);
+\draw[white!50!black] (1.5,7) node {3$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {1$\times$ Sun};
+\draw[white!50!black] (3.5,6.5) node {White Dwarf};
+\draw[yellow] (1.5,2.75) node {H $\rightarrow$ He};
+
+\draw[white!50!black] (10,8.44) node {10$\times$ Sun Black Hole};
+\fill[black] (10,6) circle (0.05);
+
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 2 Billion Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[red] (1.5,6) circle (1.5);
+\fill[white] (3.5,6) circle (0.14);
+\draw[white!50!black] (1.5,7) node {3$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {1$\times$ Sun};
+\draw[white!50!black] (3.5,6.5) node {White Dwarf};
+\draw[yellow] (1.5,2.75) node {He $\rightarrow$ C,O};
+
+\draw[white!50!black] (10,8.44) node {10$\times$ Sun Black Hole};
+\fill[black] (10,6) circle (0.05);
+
+\end{tikzpicture}
+}
+\frame{\frametitle{Three stars: a story : {\color{red} 2.001 Billion Years Old}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[red] (1.5,6) circle (1.5);
+\fill[white] (3.5,6) circle (0.14);
+\draw[white!50!black] (1.5,7) node {2.6$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {1.4$\times$ Sun};
+\draw[white!50!black] (3.5,6.5) node {White Dwarf};
+\draw[yellow] (1.5,2.75) node {He $\rightarrow$ C,O};
+\draw[yellow] (4.5,3.25) node {C,O $\rightarrow$ Mg,Ne,...,Si};
+
+\draw[white!50!black] (10,8.44) node {10$\times$ Sun Black Hole};
+\fill[black] (10,6) circle (0.05);
+
+\end{tikzpicture}
+}
+
+\frame{\frametitle{Three stars: a story : {\color{red} 2.001 Billion Years Old + 100 years}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[red] (1.5,6) circle (1.5);
+\fill[white] (3.5,6) circle (0.14);
+\draw[white!50!black] (1.5,7) node {2.6$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {1.4$\times$ Sun};
+\draw[white!50!black] (3.5,6.5) node {White Dwarf};
+\draw[yellow] (1.5,2.75) node {He $\rightarrow$ C,O};
+\draw[yellow] (4.5,3.25) node {C,O $\rightarrow$ Mg,Ne,...,Si};
+\draw[yellow] (4.5,2.75) node {... $\rightarrow$ Fe,Ni};
+\draw[yellow] (4.5,2.25) node {Thermonuclear bomb};
+
+\draw[white!50!black] (10,8.44) node {10$\times$ Sun Black Hole};
+\fill[black] (10,6) circle (0.05);
+
+\end{tikzpicture}
+}
+\frame{\frametitle{Three stars: a story :\\ {\color{red} 2.001 Billion Years Old + 100 years + 3s}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+
+\fill[red] (1.5,6) circle (1.5);
+\fill[white] (3.5,6) circle (0.14);
+\draw[white!50!black] (1.5,7) node {2.6$\times$ Sun};
+\draw[white!50!black] (3.5,7) node {1.4$\times$ Sun};
+\draw[white!50!black] (3.5,6.5) node {White Dwarf};
+\foreach \x in {0,60,-60,120,-120,180}
+{
+	\draw[blue,thick,->] (3.5,6)++(\x:0.1) -- +(\x:2.5);
+} 
+\draw[yellow] (1.5,2.75) node {He $\rightarrow$ C,O};
+
+\draw[white!50!black] (10,8.44) node {10$\times$ Sun Black Hole};
+\fill[black] (10,6) circle (0.05);
+
+\end{tikzpicture}
+}
+
+\frame{\frametitle{A supernova remnant: Tycho's supernova\\ {\small \color{red} 433 years after the explosion}}
+\begin{tikzpicture}
+\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+\tkzpic{0.9}{0.2}{11}{8.25}{Pictures/tycho};
+\draw[yellow] (2.5,7.95) -- (2.5,8.0) -- (10.3,8.0) -- (10.3,7.95);
+\draw[yellow] (6.4,8.25) node {11 light years};
+\draw[yellow!50!red] (10.6,5.5) -- (11.0,5.625) node[right] {Hot gas};
+\draw[yellow!50!red] (6.2,7.5) -- (11.0,7.625) node[right] {Dust};
+
+\draw[yellow] (6.4,0.85) node[font=\tiny] {Credit: NASA/CXC/Rutgers/J.Warren \& J.Hughes et al.}; 
+\end{tikzpicture}
+}
+
+\input{ede}
+%\frame{
+%\frametitle{What they aren't}
+%\begin{tikzpicture}
+%\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+%\fill[yellow] (7.85,2) circle(7);
+%\draw[black] (7.85,6) node {A Sun-like (1 -- $\sim 8\;\mathrm{M}_\odot$) star};
+%\draw[red] (7.85,3) node {Too much hydrogen};
+%\foreach \x in {0,30,-30,150,-150,180}
+%{%
+%	\draw[red,thick,->] (7.85,3)++(\x:2) -- +(\x:4);
+%} 
+%\draw[white]  (7.85,2) circle(0.07);
+%\end{tikzpicture}
+%}
+
+%\frame{
+%\frametitle{But, strip away the hydrogen}
+%\begin{tikzpicture}
+%\draw[opacity=0] (0.1,0.1) rectangle (12.6,8.6);
+
+%\fill[white]  (7.85,2) circle(0.07);
+%\draw[white] (7.85,2.5) node {White dwarf};
+%\draw[white] (7.85,1.5) node {Former core of sun-like star};
+%\draw[white] (7.85,1.0) node {About the size of Earth};
+
+%\end{tikzpicture}
+%}
+
+\frame{\frametitle{Summary}
+\begin{centering}
+\vspace{0.5cm}
+\input{summary}
+\end{centering}
+}
+
+\section*{bibliography}
+
+
+\end{document}
+
